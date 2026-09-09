@@ -1,0 +1,23 @@
+# Target
+CONFIG_IDF_TARGET="esp32s3"
+
+# --- Требования arduino-esp32 как компонента ESP-IDF ---
+# delay() в cores/esp32/esp32-hal-misc.c рассчитан на тик 1 мс
+CONFIG_FREERTOS_HZ=1000
+
+# Arduino-сборка большая: 2MB / single-app (1MB) не хватает
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
+CONFIG_PARTITION_TABLE_SINGLE_APP_LARGE=y
+
+# app_main остаётся нашим (setup()/loop() не используются)
+# CONFIG_AUTOSTART_ARDUINO is not set
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# --- Совместимость arduino-esp32 3.3.11 с ESP-IDF v6.0 ---
+# IDF v6 включает "-Werror -Wextra -Wno-error=extra", но GCC не распространяет
+# -Wno-error=extra на подопции, поэтому -Wmissing-field-initializers остаётся
+# фатальным. Ломает и код Arduino (LittleFS.cpp), и заголовки самого IDF
+# (gpspi_flash_ll.h) при включении из C++. Опция меняет -Werror на -Werror=all:
+# предупреждения -Wall по-прежнему ошибки, группа -Wextra — нет.
+CONFIG_COMPILER_DISABLE_DEFAULT_ERRORS=y
