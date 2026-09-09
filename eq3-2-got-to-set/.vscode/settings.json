@@ -22,7 +22,7 @@
   "idf.openOcdConfigs": [
     "board/esp32s3-builtin.cfg"
   ],
-  "idf.port": "detect",
+  "idf.port": "/dev/tty.usbmodem5C390163431",
   "idf.currentSetup": "/Users/andrew/.espressif/v6.0.2/esp-idf",
   "idf.customExtraVars": {
     "IDF_TARGET": "esp32s3"
@@ -32,5 +32,6 @@
     "--background-index",
     "--query-driver=**",
     "--compile-commands-dir=/Users/andrew/embedded/pet-projects/eq3-2-got-to-set/build"
-  ]
+  ],
+  "idf.flashType": "UART"
 }
