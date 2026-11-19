@@ -1,0 +1,2 @@
+source /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/dev/bootloader/gdbinit/symbols
+source /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/dev/bootloader/gdbinit/connect

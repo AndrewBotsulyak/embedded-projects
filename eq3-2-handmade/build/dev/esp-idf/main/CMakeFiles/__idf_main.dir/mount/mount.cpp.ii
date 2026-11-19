@@ -1,0 +1,2708 @@
+# 0 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/build/dev//"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.h" 1
+
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h" 1
+
+
+
+
+
+
+       
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 1 3 4
+# 12 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+
+
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h" 1 3 4
+# 45 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h" 1 3 4
+# 32 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h" 1 3 4
+# 12 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h" 1 3 4
+# 25 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h" 3 4
+
+# 25 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h" 3 4
+extern "C" {
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/picolibc.h" 1 3 4
+
+
+
+
+
+       
+# 29 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h" 2 3 4
+# 503 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/features.h" 3 4
+}
+# 13 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h" 2 3 4
+# 33 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h" 2 3 4
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/float.h" 1 3 4
+# 35 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/config.h" 2 3 4
+# 46 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h" 2 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 1 3 4
+# 139 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 3 4
+extern "C" {
+# 210 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 3 4
+typedef signed char __int8_t;
+
+
+
+
+typedef unsigned char __uint8_t;
+
+
+
+typedef short int __int16_t;
+
+
+
+
+typedef short unsigned int __uint16_t;
+
+
+
+typedef long int __int32_t;
+
+
+
+
+typedef long unsigned int __uint32_t;
+
+
+
+typedef long long int __int64_t;
+
+
+
+
+typedef long long unsigned int __uint64_t;
+
+
+
+typedef signed char __int_least8_t;
+
+typedef unsigned char __uint_least8_t;
+# 272 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 3 4
+typedef short int __int_least16_t;
+
+typedef short unsigned int __uint_least16_t;
+# 294 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 3 4
+typedef long int __int_least32_t;
+
+typedef long unsigned int __uint_least32_t;
+# 312 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 3 4
+typedef long long int __int_least64_t;
+
+typedef long long unsigned int __uint_least64_t;
+# 326 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 3 4
+typedef long long int __intmax_t;
+
+
+
+
+
+
+
+typedef long long unsigned int __uintmax_t;
+
+
+
+
+
+
+
+typedef int __intptr_t;
+
+typedef unsigned int __uintptr_t;
+# 359 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_default_types.h" 3 4
+}
+# 47 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/cdefs.h" 2 3 4
+# 7 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/build/dev/config/sdkconfig.h" 1 3 4
+
+
+
+
+       
+# 8 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 160 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 3 4
+typedef int ptrdiff_t;
+# 229 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 3 4
+typedef unsigned int size_t;
+# 440 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 3 4
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 451 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 3 4
+} max_align_t;
+
+
+
+
+
+
+  typedef decltype(nullptr) nullptr_t;
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 13 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 2 3 4
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h" 1 3 4
+# 36 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h" 3 4
+       
+       
+       
+       
+       
+       
+       
+       
+# 193 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_intsup.h" 3 4
+       
+       
+       
+       
+       
+       
+       
+       
+# 15 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 2 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h" 1 3 4
+# 14 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_stdint.h" 3 4
+extern "C" {
+
+
+
+typedef __int8_t int8_t ;
+
+
+
+typedef __uint8_t uint8_t ;
+
+
+
+
+
+
+
+typedef __int16_t int16_t ;
+
+
+
+typedef __uint16_t uint16_t ;
+
+
+
+
+
+
+
+typedef __int32_t int32_t ;
+
+
+
+typedef __uint32_t uint32_t ;
+
+
+
+
+
+
+
+typedef __int64_t int64_t ;
+
+
+
+typedef __uint64_t uint64_t ;
+
+
+
+
+
+
+typedef __intmax_t intmax_t;
+
+
+
+
+typedef __uintmax_t uintmax_t;
+
+
+
+
+typedef __intptr_t intptr_t;
+
+
+
+
+typedef __uintptr_t uintptr_t;
+
+
+
+}
+# 16 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 2 3 4
+
+extern "C" {
+
+
+typedef __int_least8_t int_least8_t;
+typedef __uint_least8_t uint_least8_t;
+
+
+
+
+typedef __int_least16_t int_least16_t;
+typedef __uint_least16_t uint_least16_t;
+
+
+
+
+typedef __int_least32_t int_least32_t;
+typedef __uint_least32_t uint_least32_t;
+
+
+
+
+typedef __int_least64_t int_least64_t;
+typedef __uint_least64_t uint_least64_t;
+# 50 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 3 4
+  typedef int int_fast8_t;
+  typedef unsigned int uint_fast8_t;
+# 60 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 3 4
+  typedef int int_fast16_t;
+  typedef unsigned int uint_fast16_t;
+# 70 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 3 4
+  typedef int int_fast32_t;
+  typedef unsigned int uint_fast32_t;
+# 80 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 3 4
+  typedef long long int int_fast64_t;
+  typedef long long unsigned int uint_fast64_t;
+# 467 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdint.h" 3 4
+  }
+# 10 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/stdio.h" 1
+
+
+
+
+
+       
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/stdio.h" 2
+
+
+       
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 1 3 4
+# 42 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 43 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 2 3 4
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 46 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 2 3 4
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h" 1 3 4
+# 40 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h" 3 4
+typedef __builtin_va_list __gnuc_va_list;
+# 48 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 2 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/lock.h" 1 3 4
+
+
+
+
+
+       
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h" 1 3 4
+
+
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 6 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h" 2 3 4
+# 24 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h" 3 4
+extern "C" {
+
+struct __lock;
+typedef struct __lock * _LOCK_T;
+
+
+
+
+
+
+void __retarget_lock_init(_LOCK_T *lock);
+void __retarget_lock_init_recursive(_LOCK_T *lock);
+void __retarget_lock_close(_LOCK_T lock);
+void __retarget_lock_close_recursive(_LOCK_T lock);
+void __retarget_lock_acquire(_LOCK_T lock);
+void __retarget_lock_acquire_recursive(_LOCK_T lock);
+void __retarget_lock_release(_LOCK_T lock);
+void __retarget_lock_release_recursive(_LOCK_T lock);
+# 52 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/lock.h" 3 4
+}
+
+
+
+
+
+extern struct __lock __lock___libc_recursive_mutex;
+# 9 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/lock.h" 2 3 4
+
+
+
+extern "C" {
+# 24 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/lock.h" 3 4
+struct __lock {
+
+
+
+
+
+
+
+    int reserved[21];
+
+};
+
+
+
+
+
+
+
+typedef _LOCK_T _lock_t;
+
+void _lock_init(_lock_t *plock);
+void _lock_init_recursive(_lock_t *plock);
+void _lock_close(_lock_t *plock);
+void _lock_close_recursive(_lock_t *plock);
+void _lock_acquire(_lock_t *plock);
+void _lock_acquire_recursive(_lock_t *plock);
+int _lock_try_acquire(_lock_t *plock);
+int _lock_try_acquire_recursive(_lock_t *plock);
+void _lock_release(_lock_t *plock);
+void _lock_release_recursive(_lock_t *plock);
+
+
+
+
+}
+# 49 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 2 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 1 3 4
+# 52 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 374 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 3 4
+typedef unsigned int wint_t;
+# 53 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 2 3 4
+# 61 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/_types.h" 1 3 4
+# 62 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 2 3 4
+
+
+typedef long __blkcnt_t;
+typedef __int64_t __blkcnt64_t;
+
+
+
+typedef long __blksize_t;
+
+
+
+typedef __uint64_t __fsblkcnt_t;
+
+
+
+typedef __uint32_t __fsfilcnt_t;
+
+
+
+
+
+
+typedef long _off_t;
+
+
+
+
+
+
+typedef int __pid_t;
+
+
+
+
+
+
+typedef short __dev_t;
+
+
+
+
+
+
+
+typedef unsigned short __uid_t;
+
+
+
+
+
+
+typedef unsigned short __gid_t;
+
+
+
+
+typedef __uint32_t __id_t;
+
+
+
+
+
+
+
+typedef unsigned short __ino_t;
+
+typedef __uint64_t __ino64_t;
+# 142 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 3 4
+typedef __uint32_t __mode_t;
+
+
+
+
+
+__extension__ typedef long long _off64_t;
+
+
+typedef _off_t __off_t;
+typedef __uint64_t __off64_t;
+
+typedef _off64_t __loff_t;
+
+
+typedef long __key_t;
+
+
+
+
+
+
+
+typedef long _fpos_t;
+
+
+
+
+typedef _off64_t _fpos64_t;
+
+
+
+
+
+
+
+typedef unsigned int __size_t;
+# 194 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 3 4
+typedef signed int _ssize_t;
+# 205 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_types.h" 3 4
+typedef _ssize_t __ssize_t;
+
+
+
+typedef struct
+{
+  int __count;
+  union
+  {
+    wint_t __wch;
+    unsigned char __wchb[4];
+    __uint32_t __ucs;
+    __uint16_t __ucs2;
+  } __value;
+} _mbstate_t;
+
+
+
+
+struct __iconv_t;
+typedef struct __iconv_t *_iconv_t;
+
+
+
+
+
+
+typedef unsigned long __clock_t;
+
+
+
+
+
+
+typedef __int_least64_t __time_t;
+
+
+
+
+
+typedef unsigned long __clockid_t;
+
+
+typedef long __daddr_t;
+
+
+
+typedef unsigned long __timer_t;
+
+
+typedef __uint8_t __sa_family_t;
+
+
+
+typedef __uint32_t __socklen_t;
+
+
+typedef __int32_t __nl_item;
+typedef unsigned short __nlink_t;
+typedef long __suseconds_t;
+typedef unsigned long __useconds_t;
+# 50 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 2 3 4
+
+extern "C" {
+# 86 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+typedef __uint16_t __ungetc_t;
+
+
+struct __file {
+ __ungetc_t unget;
+ __uint8_t flags;
+# 100 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+ int (*put)(char, struct __file *);
+ int (*get)(struct __file *);
+ int (*flush)(struct __file *);
+
+ _LOCK_T lock;
+
+};
+# 118 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+struct __file_close {
+ struct __file file;
+ int (*close)(struct __file *);
+};
+
+
+
+
+
+
+
+struct __file_ext {
+        struct __file_close cfile;
+        __off_t (*seek)(struct __file *, __off_t offset, int whence);
+        int (*setvbuf)(struct __file *, char *buf, int mode, size_t size);
+};
+# 148 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+typedef struct __file __FILE;
+
+
+
+
+typedef __FILE FILE;
+# 164 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+extern FILE *stdin;
+extern FILE *stdout;
+extern FILE *stderr;
+# 206 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+FILE *fdevopen(int (*__put)(char, FILE*), int (*__get)(FILE*), int(*__flush)(FILE *));
+int fclose(FILE *__stream);
+int fflush(FILE *stream);
+# 266 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+int fputc(int __c, FILE *__stream);
+int putc(int __c, FILE *__stream);
+int putchar(int __c);
+
+
+
+int printf(const char *__fmt, ...) __attribute__((__format__(printf,1,2)));
+int fprintf(FILE *__stream, const char *__fmt, ...) __attribute__((__format__(printf,2,3)));
+int vprintf(const char *__fmt, __gnuc_va_list __ap) __attribute__((__format__(printf,1,0)));
+int vfprintf(FILE *__stream, const char *__fmt, __gnuc_va_list __ap) __attribute__((__format__(printf,2,0)));
+int sprintf(char *__s, const char *__fmt, ...) __attribute__((__format__(printf,2,3)));
+int snprintf(char *__s, size_t __n, const char *__fmt, ...) __attribute__((__format__(printf,3,4)));
+int vsprintf(char *__s, const char *__fmt, __gnuc_va_list ap) __attribute__((__format__(printf,2,0)));
+int vsnprintf(char *__s, size_t __n, const char *__fmt, __gnuc_va_list ap) __attribute__((__format__(printf,3,0)));
+int asprintf(char **strp, const char *fmt, ...) __attribute__((__format__(printf,2,3)));
+char *asnprintf(char *str, size_t *lenp, const char *fmt, ...) __attribute__((__format__(printf,3,4)));
+int vasprintf(char **strp, const char *fmt, __gnuc_va_list ap) __attribute__((__format__(printf,2,0)));
+char *vasnprintf(char *str, size_t *lenp, const char *fmt, __gnuc_va_list ap) __attribute__((__format__(printf,3,0)));
+
+int fputs(const char *__str, FILE *__stream);
+int puts(const char *__str);
+size_t fwrite(const void *__ptr, size_t __size, size_t __nmemb,
+         FILE *__stream);
+
+int fgetc(FILE *__stream);
+int getc(FILE *__stream);
+int getchar(void);
+
+int ungetc(int __c, FILE *__stream);
+
+int scanf(const char *__fmt, ...) __attribute__((__format__(scanf,1,2)));
+int fscanf(FILE *__stream, const char *__fmt, ...) __attribute__((__format__(scanf,2,3)));
+int vscanf(const char *__fmt, __gnuc_va_list __ap) __attribute__((__format__(scanf,1,0)));
+int vfscanf(FILE *__stream, const char *__fmt, __gnuc_va_list __ap) __attribute__((__format__(scanf,2,0)));
+int sscanf(const char *__buf, const char *__fmt, ...) __attribute__((__format__(scanf,2,3)));
+int vsscanf(const char *__buf, const char *__fmt, __gnuc_va_list ap) __attribute__((__format__(scanf,2,0)));
+
+char *fgets(char *__str, int __size, FILE *__stream);
+
+
+
+size_t fread(void *__ptr, size_t __size, size_t __nmemb,
+        FILE *__stream);
+
+void clearerr(FILE *__stream);
+int ferror(FILE *__stream);
+int feof(FILE *__stream);
+# 328 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+void clearerr_unlocked(FILE *__stream);
+int ferror_unlocked(FILE *__stream);
+int feof_unlocked(FILE *__stream);
+# 367 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+typedef _fpos_t fpos_t;
+
+
+
+
+
+
+
+typedef __off_t off_t;
+
+
+
+
+typedef __off64_t off64_t;
+
+
+
+
+typedef _ssize_t ssize_t;
+
+
+
+
+
+
+typedef __gnuc_va_list va_list;
+# 401 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+int fgetpos(FILE * __restrict stream, fpos_t * __restrict pos);
+FILE *fopen(const char *path, const char *mode) __attribute__((__malloc__, __malloc__(fclose,1)));
+FILE *freopen(const char *path, const char *mode, FILE *stream);
+FILE *fdopen(int, const char *) __attribute__((__malloc__, __malloc__(fclose,1)));
+FILE *fmemopen(void *buf, size_t size, const char *mode) __attribute__((__malloc__, __malloc__(fclose,1)));
+int fseek(FILE *stream, long offset, int whence);
+int fseeko(FILE *stream, __off_t offset, int whence);
+int fsetpos(FILE *stream, const fpos_t *pos);
+long ftell(FILE *stream);
+__off_t ftello(FILE *stream);
+int fileno(FILE *);
+void perror(const char *s);
+int remove(const char *pathname);
+int rename(const char *oldpath, const char *newpath);
+void rewind(FILE *stream);
+void setbuf(FILE *stream, char *buf);
+void setbuffer(FILE *stream, char *buf, size_t size);
+void setlinebuf(FILE *stream);
+int setvbuf(FILE *stream, char *buf, int mode, size_t size);
+FILE *tmpfile(void);
+char *tmpnam (char *s);
+_ssize_t getline(char **__restrict lineptr, size_t *__restrict n, FILE *__restrict stream);
+_ssize_t getdelim(char **__restrict lineptr, size_t *__restrict n, int delim, FILE *__restrict stream);
+# 438 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+int getc_unlocked (FILE *);
+int getchar_unlocked (void);
+void flockfile (FILE *);
+int ftrylockfile (FILE *);
+void funlockfile (FILE *);
+int putc_unlocked (int, FILE *);
+int putchar_unlocked (int);
+# 495 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+static inline __uint32_t
+__printf_float(float f)
+{
+ union {
+  float f;
+  __uint32_t u;
+ } u = { .f = f };
+ return u.u;
+}
+# 570 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdio.h" 3 4
+}
+# 18 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/stdio.h" 2
+
+       
+
+
+
+
+# 23 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/stdio.h"
+extern "C" {
+
+
+
+
+
+FILE *funopen(const void *cookie,
+                 int (*readfn)(void *cookie, char *buf,
+                               int n),
+                 int (*writefn)(void *cookie, const char *buf,
+                                int n),
+                 __off_t (*seekfn)(void *cookie, __off_t off, int whence),
+                 int (*closefn)(void *cookie));
+
+
+
+
+void flockfile(FILE *);
+void funlockfile(FILE *);
+FILE *open_memstream(char **, size_t *);
+
+typedef ssize_t cookie_read_function_t(void *cookie, char *buf, size_t n);
+typedef ssize_t cookie_write_function_t(void *cookie, const char *buf, size_t n);
+typedef int cookie_seek_function_t(void *cookie, __off_t *off, int whence);
+typedef int cookie_close_function_t(void *cookie);
+typedef struct {
+
+
+    cookie_read_function_t *read;
+    cookie_write_function_t *write;
+    cookie_seek_function_t *seek;
+    cookie_close_function_t *close;
+} cookie_io_functions_t;
+FILE *fopencookie(void *cookie, const char *mode, cookie_io_functions_t functions);
+
+
+
+}
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/assert.h" 1
+# 10 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/assert.h"
+       
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 1 3 4
+# 43 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 44 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 2 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/ieeefp.h" 1 3 4
+# 45 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 2 3 4
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 49 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 2 3 4
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/machine/stdlib.h" 1 3 4
+# 51 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 2 3 4
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h" 1 3 4
+# 10 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 11 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/alloca.h" 2 3 4
+# 53 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 2 3 4
+
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h" 1 3 4
+
+
+
+
+
+
+
+# 7 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_locale.h" 3 4
+typedef int locale_t;
+# 58 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 2 3 4
+
+
+extern "C" {
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/_wait.h" 1 3 4
+# 63 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 2 3 4
+
+typedef struct
+{
+  int quot;
+  int rem;
+} div_t;
+
+typedef struct
+{
+  long quot;
+  long rem;
+} ldiv_t;
+
+
+typedef struct
+{
+  long long int quot;
+  long long int rem;
+} lldiv_t;
+
+
+
+
+typedef int (*__compar_fn_t) (const void *, const void *);
+
+
+
+
+
+
+
+size_t __locale_mb_cur_max (void);
+
+
+
+
+void free (void *) __attribute__((__nothrow__));
+
+
+__attribute__((__noreturn__)) void _Exit (int __status);
+
+
+long a64l (const char *__input);
+
+__attribute__((__noreturn__)) void abort (void);
+int abs (int);
+
+void *aligned_alloc(size_t, size_t) __attribute__((__malloc__, __malloc__(free,1))) __attribute__ ((__alloc_align__(1)))
+                         __attribute__ ((__alloc_size__(2))) __attribute__((__warn_unused_result__)) __attribute__((__nothrow__));
+
+
+__uint32_t arc4random (void);
+__uint32_t arc4random_uniform (__uint32_t);
+void arc4random_buf (void *, size_t);
+
+
+int at_quick_exit(void (*)(void));
+
+int atexit (void (*__func)(void));
+double atof (const char *__nptr);
+
+float atoff (const char *__nptr);
+
+int atoi (const char *__nptr);
+long atol (const char *__nptr);
+
+long long atoll (const char *__nptr);
+
+void * bsearch (const void *__key,
+                 const void *__base,
+                 size_t __nmemb,
+                 size_t __size,
+                 __compar_fn_t _compar);
+void *calloc(size_t, size_t) __attribute__((__malloc__, __malloc__(free,1))) __attribute__((__warn_unused_result__))
+      __attribute__ ((__alloc_size__(1,2))) __attribute__((__nothrow__));
+div_t div (int __numer, int __denom);
+
+struct _rand48;
+double drand48 (void);
+double _drand48_r (struct _rand48 *);
+double erand48 (unsigned short [3]);
+double _erand48_r (struct _rand48 *, unsigned short [3]);
+
+__attribute__((__noreturn__)) void exit (int __status);
+void free (void *) __attribute__((__nothrow__));
+char * getenv (const char *__string);
+
+char * secure_getenv (const char *__string);
+
+
+char * _findenv (const char *, int *);
+
+
+extern char *suboptarg;
+int getsubopt (char **, char * const *, char **);
+
+
+int grantpt(int fd);
+
+
+char * initstate (unsigned, char *, size_t);
+
+
+long jrand48 (unsigned short [3]);
+long _jrand48_r (struct _rand48 *, unsigned short [3]);
+
+long labs (long);
+
+void lcong48 (unsigned short [7]);
+void _lcong48_r (struct _rand48 *, unsigned short [7]);
+
+ldiv_t ldiv (long __numer, long __denom);
+
+long long llabs (long long);
+lldiv_t lldiv (long long __numer, long long __denom);
+
+
+long lrand48 (void);
+long _lrand48_r (struct _rand48 *);
+
+void *malloc(size_t) __attribute__((__malloc__, __malloc__(free,1))) __attribute__((__warn_unused_result__)) __attribute__ ((__alloc_size__(1))) __attribute__((__nothrow__));
+int mblen (const char *, size_t);
+size_t mbstowcs (wchar_t *__restrict, const char *__restrict, size_t);
+int mbtowc (wchar_t *__restrict, const char *__restrict, size_t);
+
+char * mkdtemp (char *);
+
+
+int mkostemp (char *, int);
+int mkostemps (char *, int, int);
+
+
+int mkstemp (char *);
+
+
+int mkstemps (char *, int);
+
+
+char * mktemp (char *) __attribute__((__deprecated__("the use of `mktemp' is dangerous; use `mkstemp' instead")));
+
+
+long mrand48 (void);
+long _mrand48_r (struct _rand48 *);
+long nrand48 (unsigned short [3]);
+long _nrand48_r (struct _rand48 *, unsigned short [3]);
+
+
+int posix_memalign (void **, size_t, size_t) __attribute__((__nonnull__ (1)))
+     __attribute__((__warn_unused_result__));
+
+
+int putenv (char *__string);
+
+
+__attribute__((__noreturn__)) void
+ quick_exit(int);
+
+void qsort (void *__base, size_t __nmemb, size_t __size, __compar_fn_t _compar);
+
+
+
+
+
+void qsort_r (void *__base, size_t __nmemb, size_t __size, int (*_compar)(const void *, const void *, void *), void *__thunk);
+# 236 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 3 4
+int rand (void);
+
+int rand_r (unsigned *__seed);
+
+
+long random (void);
+
+void *realloc(void *, size_t) __attribute__((__warn_unused_result__)) __attribute__ ((__alloc_size__(2))) __attribute__((__nothrow__));
+
+void *reallocarray(void *, size_t, size_t) __attribute__((__warn_unused_result__)) __attribute__ ((__alloc_size__(2,3)));
+void *reallocf(void *, size_t) __attribute__((__warn_unused_result__)) __attribute__ ((__alloc_size__(2)));
+
+
+char * realpath (const char *__restrict path, char *__restrict resolved_path);
+
+
+int rpmatch (const char *response);
+
+
+unsigned short *
+       seed48 (unsigned short [3]);
+unsigned short *
+       _seed48_r (struct _rand48 *, unsigned short [3]);
+
+
+int setenv (const char *__string, const char *__value, int __overwrite);
+
+
+void setkey (const char *__key);
+
+
+char * setstate (char *);
+
+void srand (unsigned __seed);
+
+void srand48 (long);
+void _srand48_r (struct _rand48 *, long);
+
+
+void srandom (unsigned);
+
+double strtod (const char *__restrict __n, char **__restrict __end_PTR);
+
+int strfromd(char *__restrict str, size_t n,
+                 const char *__restrict format, double fp);
+
+
+float strtof (const char *__restrict __n, char **__restrict __end_PTR);
+
+long double
+        strtold (const char *__restrict __n, char **__restrict __end_PTR);
+
+
+int strfromf(char *__restrict str, size_t n,
+                 const char *__restrict format, float fp);
+
+int strfroml (char *__restrict str, size_t n,
+                  const char *__restrict format, long double fp);
+# 303 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 3 4
+long strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+
+
+extern long double
+        strtold (const char *__restrict, char **__restrict);
+
+
+
+long long
+        strtoll (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+
+unsigned long
+        strtoul (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+
+unsigned long long
+        strtoull (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+
+
+
+double strtod_l (const char *__restrict, char **__restrict, locale_t);
+float strtof_l (const char *__restrict, char **__restrict, locale_t);
+
+extern long double
+        strtold_l (const char *__restrict, char **__restrict,
+                   locale_t);
+
+long strtol_l (const char *__restrict, char **__restrict, int, locale_t);
+unsigned long
+        strtoul_l (const char *__restrict, char **__restrict, int,
+    locale_t __loc);
+long long
+        strtoll_l (const char *__restrict, char **__restrict, int, locale_t);
+unsigned long long
+        strtoull_l (const char *__restrict, char **__restrict, int,
+                    locale_t __loc);
+
+int system (const char *__string);
+
+int unsetenv (const char *__string);
+
+size_t wcstombs (char *__restrict, const wchar_t *__restrict, size_t);
+int wctomb (char *, wchar_t);
+void *valloc (size_t) __attribute__((__malloc__, __malloc__(free,1))) __attribute__((__warn_unused_result__)) __attribute__ ((__alloc_size__(1))) __attribute__((__nothrow__));
+
+char *l64a (long __input);
+
+
+int on_exit (void (*__func)(int, void *),void *__arg);
+
+
+
+
+char *ecvt (double,int,int *,int *);
+
+int ecvt_r (double,int,int *,int *, char*, size_t);
+
+
+
+
+char *ecvtf (float,int,int *,int *);
+
+int ecvtf_r (float,int,int *,int *, char*, size_t);
+
+
+
+
+char *fcvt (double,int,int *,int *);
+
+int fcvt_r (double, int, int*, int*, char *, size_t);
+
+
+
+
+char *fcvtf (float,int,int *,int *);
+
+int fcvtf_r (float, int, int*, int*, char *, size_t);
+
+
+
+
+
+char *ecvtl(long double, int, int*, int*);
+int ecvtl_r(long double, int, int*, int*, char *, size_t);
+char *fcvtl(long double, int, int*, int*);
+int fcvtl_r(long double, int, int*, int*, char *, size_t);
+
+
+char *gcvt (double,int,char *);
+char *gcvtf (float,int,char *);
+
+
+char *gcvtl(long double, int, char *);
+
+
+
+
+
+
+char *__itoa (int, char *, int);
+char *__utoa (unsigned, char *, int);
+char *itoa (int, char *, int);
+char *utoa (unsigned, char *, int);
+void cfree (void *);
+char *__dtoa (double, int, int, int *, int*, char**);
+char *__ldtoa (long double, int, int, int *, int *, char **);
+void __eprintf (const char *, const char *, unsigned int, const char *);
+# 434 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/stdlib.h" 3 4
+}
+# 13 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/assert.h" 2
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h" 1 3 4
+# 38 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 39 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h" 2 3 4
+
+extern "C" {
+# 75 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/assert.h" 3 4
+__attribute__((__noreturn__)) void __assert (const char *, const char *, int);
+
+__attribute__((__noreturn__)) void __assert_func (const char *, int, const char *, const char *);
+
+__attribute__((__noreturn__)) void __assert_no_args (void);
+
+
+
+
+
+}
+# 16 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/assert.h" 2
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h" 2
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_compiler.h" 1
+
+
+
+
+
+
+       
+# 14 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h" 2
+
+
+
+# 16 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h"
+extern "C" {
+
+
+typedef int esp_err_t;
+# 58 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h"
+const char *esp_err_to_name(esp_err_t code);
+# 76 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h"
+const char *esp_err_to_name_r(esp_err_t code, char *buf, size_t buflen);
+
+
+void _esp_error_check_failed(esp_err_t rc, const char *file, int line, const char *function, const char *expression) __attribute__((__noreturn__));
+
+void _esp_error_check_failed_without_abort(esp_err_t rc, const char *file, int line, const char *function, const char *expression);
+# 146 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_err.h"
+}
+# 5 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.h" 2
+# 19 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.h"
+enum mount_dir_t {
+    MOUNT_DIR_N,
+    MOUNT_DIR_S,
+    MOUNT_DIR_E,
+    MOUNT_DIR_W,
+};
+
+
+enum mount_rate_t {
+    MOUNT_RATE_GUIDE,
+    MOUNT_RATE_CENTER,
+    MOUNT_RATE_FIND,
+    MOUNT_RATE_SLEW,
+};
+
+
+esp_err_t mount_move(mount_dir_t dir);
+
+
+esp_err_t mount_stop(mount_dir_t dir);
+
+
+esp_err_t mount_stop_all();
+
+
+
+esp_err_t mount_track(bool on);
+
+
+
+void mount_set_rate(mount_rate_t rate);
+# 2 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 2
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 1
+
+
+
+
+
+
+       
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdarg.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h" 1 3 4
+# 16 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 17 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h" 2 3 4
+
+
+
+# 19 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h" 3 4
+extern "C" {
+
+
+
+
+
+typedef struct {
+  intmax_t quot;
+  intmax_t rem;
+} imaxdiv_t;
+
+
+
+
+
+
+
+typedef short unsigned int _wchar_t;
+# 326 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/inttypes.h" 3 4
+intmax_t imaxabs(intmax_t);
+imaxdiv_t imaxdiv(intmax_t __numer, intmax_t __denomer);
+intmax_t strtoimax(const char *__restrict, char **__restrict, int);
+uintmax_t strtoumax(const char *__restrict, char **__restrict, int);
+intmax_t wcstoimax(const _wchar_t *__restrict, _wchar_t **__restrict, int);
+uintmax_t wcstoumax(const _wchar_t *__restrict, _wchar_t **__restrict, int);
+
+
+intmax_t strtoimax_l(const char *__restrict, char **_restrict, int, locale_t);
+uintmax_t strtoumax_l(const char *__restrict, char **_restrict, int, locale_t);
+intmax_t wcstoimax_l(const _wchar_t *__restrict, _wchar_t **_restrict, int, locale_t);
+uintmax_t wcstoumax_l(const _wchar_t *__restrict, _wchar_t **_restrict, int, locale_t);
+
+
+}
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h" 1
+
+
+
+
+
+
+       
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stdbool.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h" 2
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/esp32s3/include/soc/reset_reasons.h" 1
+# 15 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/esp32s3/include/soc/reset_reasons.h"
+       
+# 30 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/esp32s3/include/soc/reset_reasons.h"
+
+# 30 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/esp32s3/include/soc/reset_reasons.h"
+extern "C" {
+
+
+
+
+
+
+typedef enum {
+    RESET_REASON_CHIP_POWER_ON = 0x01,
+    RESET_REASON_CHIP_BROWN_OUT = 0x01,
+    RESET_REASON_CHIP_SUPER_WDT = 0x01,
+    RESET_REASON_CORE_SW = 0x03,
+    RESET_REASON_CORE_DEEP_SLEEP = 0x05,
+    RESET_REASON_CORE_MWDT0 = 0x07,
+    RESET_REASON_CORE_MWDT1 = 0x08,
+    RESET_REASON_CORE_RTC_WDT = 0x09,
+    RESET_REASON_CPU0_MWDT0 = 0x0B,
+    RESET_REASON_CPU1_MWDT0 = 0x0B,
+    RESET_REASON_CPU0_SW = 0x0C,
+    RESET_REASON_CPU1_SW = 0x0C,
+    RESET_REASON_CPU0_RTC_WDT = 0x0D,
+    RESET_REASON_CPU1_RTC_WDT = 0x0D,
+    RESET_REASON_SYS_BROWN_OUT = 0x0F,
+    RESET_REASON_SYS_RTC_WDT = 0x10,
+    RESET_REASON_CPU0_MWDT1 = 0x11,
+    RESET_REASON_CPU1_MWDT1 = 0x11,
+    RESET_REASON_SYS_SUPER_WDT = 0x12,
+    RESET_REASON_SYS_CLK_GLITCH = 0x13,
+    RESET_REASON_CORE_EFUSE_CRC = 0x14,
+    RESET_REASON_CORE_USB_UART = 0x15,
+    RESET_REASON_CORE_USB_JTAG = 0x16,
+    RESET_REASON_CORE_PWR_GLITCH = 0x17,
+} soc_reset_reason_t;
+
+
+}
+# 14 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/esp32s3/include/soc/soc_caps.h" 1
+# 22 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/esp32s3/include/soc/soc_caps.h"
+       
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/include/soc/soc_caps_eval.h" 1
+
+
+
+
+
+
+       
+# 26 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/soc/esp32s3/include/soc/soc_caps.h" 2
+# 15 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h" 2
+
+
+extern "C" {
+# 26 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+void esp_rom_software_reset_system(void);
+# 36 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+void esp_rom_software_reset_cpu(int cpu_no);
+# 46 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+int esp_rom_printf(const char *fmt, ...);
+# 56 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+int esp_rom_vprintf(const char *fmt, va_list ap);
+# 84 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+int esp_rom_cvt(unsigned long long val, long radix, int pad, const char *digits, char *buf);
+
+
+
+
+
+
+void esp_rom_delay_us(uint32_t us);
+# 100 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+void esp_rom_install_channel_putc(int channel, void (*putc)(char c));
+
+
+
+
+
+
+
+void esp_rom_output_to_channels(char c);
+
+
+
+
+void esp_rom_install_uart_printf(void);
+
+
+
+
+
+
+
+soc_reset_reason_t esp_rom_get_reset_reason(int cpu_no);
+# 138 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+void esp_rom_route_intr_matrix(int cpu_core, uint32_t periph_intr_id, uint32_t cpu_intr_num);
+
+
+
+
+
+
+uint32_t esp_rom_get_cpu_ticks_per_us(void);
+# 154 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+void esp_rom_set_cpu_ticks_per_us(uint32_t ticks_per_us);
+# 168 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_rom/include/esp_rom_sys.h"
+}
+# 14 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_config.h" 1
+
+
+
+
+
+
+       
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_config.h" 2
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_level.h" 1
+
+
+
+
+
+
+       
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_assert.h" 1
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_level.h" 2
+
+
+
+extern "C" {
+
+
+
+
+
+typedef enum {
+    ESP_LOG_NONE = 0,
+    ESP_LOG_ERROR = 1,
+    ESP_LOG_WARN = 2,
+    ESP_LOG_INFO = 3,
+    ESP_LOG_DEBUG = 4,
+    ESP_LOG_VERBOSE = 5,
+    ESP_LOG_MAX = 6,
+} esp_log_level_t;
+
+
+
+
+
+
+
+static_assert(ESP_LOG_MAX <= ((1 << (3)) - 1), "Log level items of esp_log_level_t must fit ESP_LOG_LEVEL_MASK");
+# 107 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_level.h"
+__attribute__((always_inline))
+static inline esp_log_level_t esp_log_get_default_level(void)
+{
+
+
+
+
+
+    extern esp_log_level_t esp_log_default_level;
+    return esp_log_default_level;
+
+
+
+}
+# 168 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_level.h"
+void esp_log_level_set(const char* tag, esp_log_level_t level);
+# 180 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_level.h"
+esp_log_level_t esp_log_level_get(const char* tag);
+
+
+}
+# 14 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_config.h" 2
+
+
+
+
+extern "C" {
+# 119 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_config.h"
+typedef struct {
+    union {
+        struct {
+            esp_log_level_t log_level: (3);
+            uint32_t constrained_env: 1;
+            uint32_t require_formatting: 1;
+            uint32_t dis_color: 1;
+            uint32_t dis_timestamp: 1;
+            uint32_t binary_mode : 1;
+            uint32_t reserved: 24;
+        } opts;
+        uint32_t data;
+    };
+} esp_log_config_t;
+# 141 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_config.h"
+static_assert(((3)) == (3), "The log level should not overlap the following fields in esp_log_config_t");
+# 186 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_config.h"
+}
+# 15 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_color.h" 1
+
+
+
+
+
+
+       
+
+
+
+
+
+extern "C" {
+# 120 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_color.h"
+}
+# 17 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_buffer.h" 1
+
+
+
+
+
+
+       
+
+
+
+
+
+extern "C" {
+# 30 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_buffer.h"
+void esp_log_buffer_hex_internal(const char *tag, const void *buffer, uint16_t buff_len, esp_log_level_t level);
+# 45 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_buffer.h"
+void esp_log_buffer_char_internal(const char *tag, const void *buffer, uint16_t buff_len, esp_log_level_t level);
+# 62 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_buffer.h"
+void esp_log_buffer_hexdump_internal(const char *tag, const void *buffer, uint16_t buff_len, esp_log_level_t log_level);
+# 151 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_buffer.h"
+}
+# 18 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_timestamp.h" 1
+
+
+
+
+
+
+       
+
+
+
+
+
+
+extern "C" {
+# 38 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_timestamp.h"
+uint32_t esp_log_timestamp(void);
+# 53 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_timestamp.h"
+char* esp_log_system_timestamp(void);
+# 63 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_timestamp.h"
+uint32_t esp_log_early_timestamp(void);
+
+
+}
+# 19 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_write.h" 1
+
+
+
+
+
+
+       
+
+
+
+
+
+
+extern "C" {
+
+
+typedef int (*vprintf_like_t)(const char *, va_list);
+# 33 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_write.h"
+vprintf_like_t esp_log_set_vprintf(vprintf_like_t func);
+# 51 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_write.h"
+void esp_log_write(esp_log_level_t level, const char* tag, const char* format, ...) __attribute__((format(printf, 3, 4)));
+# 68 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_write.h"
+void esp_log_writev(esp_log_level_t level, const char* tag, const char* format, va_list args);
+
+
+}
+# 20 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_format.h" 1
+
+
+
+
+
+
+       
+
+
+extern "C" {
+# 21 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_format.h"
+}
+# 21 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_args.h" 1
+
+
+
+
+
+
+       
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 1 3 4
+# 43 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 44 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 2 3 4
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 48 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 2 3 4
+
+
+
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h" 1 3 4
+# 32 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h" 3 4
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 1 3 4
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include/stddef.h" 1 3 4
+# 12 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_libc/platform_include/sys/cdefs.h" 2 3 4
+# 33 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h" 2 3 4
+# 53 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h" 3 4
+
+# 53 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/strings.h" 3 4
+extern "C" {
+
+int bcmp(const void *, const void *, size_t) __attribute__((__pure__));
+void bcopy(const void *, void *, size_t);
+void bzero(void *, size_t);
+
+
+void explicit_bzero(void *, size_t);
+
+
+int ffs(int) __attribute__((__const__));
+
+
+int ffsl(long) __attribute__((__const__));
+int ffsll(long long) __attribute__((__const__));
+int fls(int) __attribute__((__const__));
+int flsl(long) __attribute__((__const__));
+int flsll(long long) __attribute__((__const__));
+
+
+char *index(const char *, int) __attribute__((__pure__));
+char *rindex(const char *, int) __attribute__((__pure__));
+
+int strcasecmp(const char *, const char *) __attribute__((__pure__));
+int strncasecmp(const char *, const char *, size_t) __attribute__((__pure__));
+
+
+int strcasecmp_l (const char *, const char *, locale_t);
+int strncasecmp_l (const char *, const char *, size_t, locale_t);
+
+}
+# 55 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 2 3 4
+
+
+extern "C" {
+# 73 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 3 4
+char *__attribute__((__nonnull__ (1)))
+         basename (const char *) __asm__("" "__gnu_basename");
+
+
+
+
+
+
+void *memccpy (void *__restrict, const void *__restrict, int, size_t);
+
+void *memchr (const void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memcpy (void *__restrict, const void *__restrict, size_t);
+
+void *memmem (const void *, size_t, const void *, size_t);
+
+void *memmove (void *, const void *, size_t);
+
+void *mempcpy (void *, const void *, size_t);
+void *memrchr (const void *, int, size_t);
+
+void *memset (void *, int, size_t);
+
+
+
+
+void *rawmemchr (const void *, int);
+
+
+char *stpcpy (char *__restrict, const char *__restrict);
+char *stpncpy (char *__restrict, const char *__restrict, size_t);
+
+
+char *strcasestr (const char *, const char *);
+
+char *strcat (char *__restrict, const char *__restrict);
+char *strchr (const char *, int);
+
+char *strchrnul (const char *, int);
+
+int strcmp (const char *, const char *);
+int strcoll (const char *, const char *);
+
+int strcoll_l (const char *, const char *, locale_t);
+
+char *strcpy (char *__restrict, const char *__restrict);
+size_t strcspn (const char *, const char *);
+
+void free (void *) __attribute__((__nothrow__));
+char *strdup (const char *) __attribute__((__malloc__, __malloc__(free,1))) __attribute__((__warn_unused_result__));
+# 137 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 3 4
+char *strerror (int);
+
+char *strerror_l (int, locale_t);
+
+
+
+
+
+
+char *strerror_r (int, char *, size_t);
+# 156 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 3 4
+const char *strerrorname_np(int errnum);
+const char *strerrordesc_np(int errnum);
+
+
+size_t strlcat (char *, const char *, size_t);
+
+size_t strlen (const char *);
+
+size_t strlcpy (char *, const char *, size_t);
+
+
+char *strlwr (char *);
+
+char *strncat (char *__restrict, const char *__restrict, size_t);
+int strncmp (const char *, const char *, size_t);
+char *strncpy (char *__restrict, const char *__restrict, size_t);
+
+char *strndup (const char *, size_t) __attribute__((__malloc__, __malloc__(free,1))) __attribute__((__warn_unused_result__));
+
+
+size_t strnlen (const char *, size_t);
+
+
+char *strnstr(const char *, const char *, size_t) __attribute__((__pure__));
+
+char *strpbrk (const char *, const char *);
+char *strrchr (const char *, int);
+
+char *strsep (char **, const char *);
+
+
+char *strsignal (int __signo);
+
+size_t strspn (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *__restrict, const char *__restrict);
+
+char *strtok_r (char *__restrict, const char *__restrict, char **__restrict);
+
+
+char *strupr (char *);
+
+
+int strverscmp (const char *, const char *);
+
+size_t strxfrm (char *__restrict, const char *__restrict, size_t);
+
+size_t strxfrm_l (char *__restrict, const char *__restrict, size_t, locale_t);
+
+
+int timingsafe_bcmp (const void *, const void *, size_t);
+int timingsafe_memcmp (const void *, const void *, size_t);
+# 235 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/sys/string.h" 1 3 4
+# 236 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/include/string.h" 2 3 4
+
+}
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_args.h" 2
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_macros.h" 1
+
+
+
+
+
+
+       
+
+
+
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_assert.h" 1
+# 14 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_macros.h" 2
+
+
+
+
+# 17 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_macros.h"
+extern "C" {
+# 91 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_macros.h"
+}
+# 14 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_args.h" 2
+# 28 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_args.h"
+extern "C" {
+
+
+
+
+
+
+
+typedef enum {
+    ESP_LOG_ARGS_TYPE_NONE = 0,
+    ESP_LOG_ARGS_TYPE_32BITS = 1,
+    ESP_LOG_ARGS_TYPE_64BITS = 2,
+    ESP_LOG_ARGS_TYPE_POINTER = 3,
+} esp_log_args_type_t;
+# 53 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_args.h"
+typedef struct {
+    unsigned tmp;
+} esp_log_args_end_t;
+# 169 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_args.h"
+extern "C++" {
+    template <typename T>
+    struct EspLogArgType;
+
+    template <>
+    struct EspLogArgType<esp_log_args_end_t> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_NONE;
+    };
+
+    template <>
+    struct EspLogArgType<char*> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_POINTER;
+    };
+
+    template <>
+    struct EspLogArgType<const char*> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_POINTER;
+    };
+
+    template <>
+    struct EspLogArgType<uint8_t*> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_POINTER;
+    };
+
+    template <>
+    struct EspLogArgType<const uint8_t*> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_POINTER;
+    };
+
+    template <>
+    struct EspLogArgType<long long int> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_64BITS;
+    };
+
+    template <>
+    struct EspLogArgType<long long unsigned int> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_64BITS;
+    };
+
+    template <>
+    struct EspLogArgType<double> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_64BITS;
+    };
+
+    template <>
+    struct EspLogArgType<float> {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_64BITS;
+    };
+
+    template <typename T>
+    struct EspLogArgType {
+        constexpr static unsigned long long log_type = ESP_LOG_ARGS_TYPE_32BITS;
+    };
+
+    template<typename T>
+    constexpr unsigned long long ESP_LOG_DETECT_TYPE(const T &)
+    {
+        return EspLogArgType<T>::log_type;
+    }
+}
+
+
+
+}
+# 22 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_attr.h" 1
+
+
+
+
+
+
+       
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_attr.h" 1
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_attr.h"
+extern "C" {
+# 228 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_attr.h"
+}
+# 10 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_attr.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_private/log_attr.h" 1
+
+
+
+
+
+
+       
+
+
+
+extern "C" {
+
+
+
+
+
+
+}
+# 11 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_attr.h" 2
+
+
+
+extern "C" {
+# 67 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log_attr.h"
+}
+# 23 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h" 2
+
+
+extern "C" {
+# 38 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h"
+void esp_log(esp_log_config_t config, const char* tag, const char* format, ...);
+# 50 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h"
+void esp_log_va(esp_log_config_t config, const char *tag, const char *format, va_list args);
+# 282 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/log/include/esp_log.h"
+}
+# 4 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 2
+
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/axis-config.h" 1
+
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/cstdint" 1 3
+# 40 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/cstdint" 3
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 1 3 4
+# 37 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 3 4
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wvariadic-macros"
+
+#pragma GCC diagnostic ignored "-Wc++11-extensions"
+#pragma GCC diagnostic ignored "-Wc++23-extensions"
+# 336 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 3 4
+namespace std
+{
+  typedef unsigned int size_t;
+  typedef int ptrdiff_t;
+
+
+  typedef decltype(nullptr) nullptr_t;
+
+
+#pragma GCC visibility push(default)
+
+
+  extern "C++" __attribute__ ((__noreturn__, __always_inline__))
+  inline void __terminate() noexcept
+  {
+    void terminate() noexcept __attribute__ ((__noreturn__,__cold__));
+    terminate();
+  }
+#pragma GCC visibility pop
+}
+# 369 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 3 4
+namespace std
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+namespace __gnu_cxx
+{
+  inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
+}
+# 573 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 3 4
+namespace std
+{
+#pragma GCC visibility push(default)
+
+
+
+
+  __attribute__((__always_inline__))
+  constexpr inline bool
+  __is_constant_evaluated() noexcept
+  {
+
+
+    if consteval { return true; } else { return false; }
+
+
+
+
+
+
+  }
+#pragma GCC visibility pop
+}
+# 648 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 3 4
+namespace std
+{
+  __attribute__((__always_inline__,__visibility__("default")))
+  inline void
+  __glibcxx_assert_fail()
+  { }
+}
+# 727 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/os_defines.h" 1 3 4
+# 728 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 2 3 4
+
+
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/cpu_defines.h" 1 3 4
+# 731 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 2 3 4
+# 949 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 3 4
+# 1 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/pstl/pstl_config.h" 1 3 4
+# 950 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/picolibc/xtensa-esp-elf/include/c++/15.2.0/xtensa-esp-elf/esp32s3/no-rtti/bits/c++config.h" 2 3 4
+
+
+
+#pragma GCC diagnostic pop
+# 41 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/cstdint" 2 3
+# 50 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/cstdint" 3
+namespace std
+{
+
+  using ::int8_t;
+  using ::int16_t;
+  using ::int32_t;
+  using ::int64_t;
+
+  using ::int_fast8_t;
+  using ::int_fast16_t;
+  using ::int_fast32_t;
+  using ::int_fast64_t;
+
+  using ::int_least8_t;
+  using ::int_least16_t;
+  using ::int_least32_t;
+  using ::int_least64_t;
+
+  using ::intmax_t;
+  using ::intptr_t;
+
+  using ::uint8_t;
+  using ::uint16_t;
+  using ::uint32_t;
+  using ::uint64_t;
+
+  using ::uint_fast8_t;
+  using ::uint_fast16_t;
+  using ::uint_fast32_t;
+  using ::uint_fast64_t;
+
+  using ::uint_least8_t;
+  using ::uint_least16_t;
+  using ::uint_least32_t;
+  using ::uint_least64_t;
+
+  using ::uintmax_t;
+  using ::uintptr_t;
+# 144 "/Users/andrew/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include/c++/15.2.0/cstdint" 3
+}
+# 5 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/axis-config.h" 2
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h" 1
+
+
+
+
+
+
+       
+
+
+
+
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h" 1
+
+
+
+
+
+
+       
+
+
+
+# 10 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/esp32s3/include/soc/gpio_num.h"
+extern "C" {
+
+
+
+
+
+typedef enum {
+    GPIO_NUM_NC = -1,
+    GPIO_NUM_0 = 0,
+    GPIO_NUM_1 = 1,
+    GPIO_NUM_2 = 2,
+    GPIO_NUM_3 = 3,
+    GPIO_NUM_4 = 4,
+    GPIO_NUM_5 = 5,
+    GPIO_NUM_6 = 6,
+    GPIO_NUM_7 = 7,
+    GPIO_NUM_8 = 8,
+    GPIO_NUM_9 = 9,
+    GPIO_NUM_10 = 10,
+    GPIO_NUM_11 = 11,
+    GPIO_NUM_12 = 12,
+    GPIO_NUM_13 = 13,
+    GPIO_NUM_14 = 14,
+    GPIO_NUM_15 = 15,
+    GPIO_NUM_16 = 16,
+    GPIO_NUM_17 = 17,
+    GPIO_NUM_18 = 18,
+    GPIO_NUM_19 = 19,
+    GPIO_NUM_20 = 20,
+    GPIO_NUM_21 = 21,
+    GPIO_NUM_26 = 26,
+    GPIO_NUM_27 = 27,
+    GPIO_NUM_28 = 28,
+    GPIO_NUM_29 = 29,
+    GPIO_NUM_30 = 30,
+    GPIO_NUM_31 = 31,
+    GPIO_NUM_32 = 32,
+    GPIO_NUM_33 = 33,
+    GPIO_NUM_34 = 34,
+    GPIO_NUM_35 = 35,
+    GPIO_NUM_36 = 36,
+    GPIO_NUM_37 = 37,
+    GPIO_NUM_38 = 38,
+    GPIO_NUM_39 = 39,
+    GPIO_NUM_40 = 40,
+    GPIO_NUM_41 = 41,
+    GPIO_NUM_42 = 42,
+    GPIO_NUM_43 = 43,
+    GPIO_NUM_44 = 44,
+    GPIO_NUM_45 = 45,
+    GPIO_NUM_46 = 46,
+    GPIO_NUM_47 = 47,
+    GPIO_NUM_48 = 48,
+    GPIO_NUM_MAX,
+} gpio_num_t;
+
+
+}
+# 13 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h" 2
+# 1 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_common/include/esp_bit_defs.h" 1
+
+
+
+
+
+
+       
+# 14 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h" 2
+
+
+extern "C" {
+# 30 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h"
+typedef enum {
+    GPIO_PORT_0 = 0,
+    GPIO_PORT_MAX,
+} gpio_port_t;
+# 91 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h"
+typedef enum {
+    GPIO_INTR_DISABLE = 0,
+    GPIO_INTR_POSEDGE = 1,
+    GPIO_INTR_NEGEDGE = 2,
+    GPIO_INTR_ANYEDGE = 3,
+    GPIO_INTR_LOW_LEVEL = 4,
+    GPIO_INTR_HIGH_LEVEL = 5,
+    GPIO_INTR_MAX,
+} gpio_int_type_t;
+# 108 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h"
+typedef enum {
+    GPIO_MODE_DISABLE = (0),
+    GPIO_MODE_INPUT = (0x00000001),
+    GPIO_MODE_OUTPUT = (0x00000002),
+    GPIO_MODE_OUTPUT_OD = (((0x00000002)) | ((0x00000004))),
+    GPIO_MODE_INPUT_OUTPUT_OD = (((0x00000001)) | ((0x00000002)) | ((0x00000004))),
+    GPIO_MODE_INPUT_OUTPUT = (((0x00000001)) | ((0x00000002))),
+} gpio_mode_t;
+
+typedef enum {
+    GPIO_PULLUP_DISABLE = 0x0,
+    GPIO_PULLUP_ENABLE = 0x1,
+} gpio_pullup_t;
+
+typedef enum {
+    GPIO_PULLDOWN_DISABLE = 0x0,
+    GPIO_PULLDOWN_ENABLE = 0x1,
+} gpio_pulldown_t;
+
+typedef enum {
+    GPIO_PULLUP_ONLY,
+    GPIO_PULLDOWN_ONLY,
+    GPIO_PULLUP_PULLDOWN,
+    GPIO_FLOATING,
+} gpio_pull_mode_t;
+
+typedef enum {
+    GPIO_DRIVE_CAP_0 = 0,
+    GPIO_DRIVE_CAP_1 = 1,
+    GPIO_DRIVE_CAP_2 = 2,
+    GPIO_DRIVE_CAP_DEFAULT = 2,
+    GPIO_DRIVE_CAP_3 = 3,
+    GPIO_DRIVE_CAP_MAX,
+} gpio_drive_cap_t;
+# 159 "/Users/andrew/.espressif/v6.0.2/esp-idf/components/esp_hal_gpio/include/hal/gpio_types.h"
+typedef struct {
+    uint32_t fun_sel;
+    uint32_t sig_out;
+    gpio_drive_cap_t drv;
+    bool pu;
+    bool pd;
+    bool ie;
+    bool oe;
+    bool oe_ctrl_by_periph;
+    bool oe_inv;
+    bool od;
+    bool slp_sel;
+} gpio_io_config_t;
+
+
+}
+# 7 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/axis-config.h" 2
+
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/pins.h" 1
+# 9 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/axis-config.h" 2
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/tmc-driver/tmc-current.h" 1
+# 41 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/tmc-driver/tmc-current.h"
+constexpr uint32_t TMC_VSENSE = 1;
+
+constexpr uint32_t TMC_V_FS_MV = TMC_VSENSE ? 180 : 325;
+constexpr uint32_t TMC_R_SENSE_MOHM = 110;
+constexpr uint32_t TMC_R_INTERNAL_MOHM = 20;
+
+
+
+
+
+constexpr uint32_t TMC_FULL_SCALE_MA =
+    TMC_V_FS_MV * 1000 / (TMC_R_SENSE_MOHM + TMC_R_INTERNAL_MOHM)
+    * 1000 / 1414;
+# 66 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/tmc-driver/tmc-current.h"
+constexpr uint8_t tmc_ma_to_cs(uint32_t ma)
+{
+    uint32_t steps = ma * 32 / TMC_FULL_SCALE_MA;
+
+    if (steps == 0) return 0;
+    if (steps > 32) return 31;
+    return steps - 1;
+}
+
+
+
+
+
+
+
+constexpr uint32_t tmc_cs_to_ma(uint8_t cs)
+{
+    return (cs + 1) * TMC_FULL_SCALE_MA / 32;
+}
+# 10 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/axis-config.h" 2
+# 23 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/axis-config.h"
+enum axis_t {
+    AXIS_RA = 0,
+    AXIS_DEC = 1,
+    AXIS_COUNT
+};
+
+struct axis_config_t {
+    const char *name;
+
+
+    uint8_t uart_addr;
+    gpio_num_t en_pin;
+    gpio_num_t step_pin;
+    gpio_num_t dir_pin;
+
+
+    uint8_t irun;
+    uint8_t ihold;
+    uint8_t irun_hot;
+    uint8_t pwm_grad;
+    uint8_t mres;
+    bool shaft;
+
+
+    uint32_t full_steps;
+    uint32_t microsteps;
+    uint32_t worm_teeth;
+    uint32_t belt_ratio;
+};
+
+
+
+inline constexpr axis_config_t AXES[AXIS_COUNT] = {
+    {
+        .name = "RA",
+        .uart_addr = 0,
+        .en_pin = GPIO_NUM_6,
+        .step_pin = GPIO_NUM_5,
+        .dir_pin = GPIO_NUM_4,
+        .irun = tmc_ma_to_cs(720),
+        .ihold = tmc_ma_to_cs(350),
+        .irun_hot = tmc_ma_to_cs(600),
+        .pwm_grad = 36,
+        .mres = 2,
+        .shaft = false,
+        .full_steps = 200,
+        .microsteps = 64,
+        .worm_teeth = 130,
+        .belt_ratio = 3,
+    },
+    {
+        .name = "DEC",
+        .uart_addr = 1,
+        .en_pin = GPIO_NUM_16,
+        .step_pin = GPIO_NUM_21,
+        .dir_pin = GPIO_NUM_14,
+        .irun = tmc_ma_to_cs(720),
+        .ihold = tmc_ma_to_cs(350),
+        .irun_hot = tmc_ma_to_cs(600),
+        .pwm_grad = 36,
+        .mres = 2,
+        .shaft = false,
+        .full_steps = 200,
+        .microsteps = 64,
+        .worm_teeth = 65,
+        .belt_ratio = 3,
+    },
+};
+
+
+
+
+
+
+constexpr uint32_t axis_motor_steps_per_rev(axis_t a)
+{
+    return AXES[a].full_steps * AXES[a].microsteps;
+}
+
+
+constexpr uint64_t axis_steps_per_rev(axis_t a)
+{
+    return (uint64_t)AXES[a].full_steps * AXES[a].microsteps
+         * AXES[a].worm_teeth * AXES[a].belt_ratio;
+}
+# 118 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/axis-config.h"
+constexpr uint32_t axis_sidereal_mhz(axis_t a)
+{
+    constexpr uint64_t SIDEREAL_DAY_X10000 = 861640905ULL;
+    return (uint32_t)((axis_steps_per_rev(a) * 10000000ULL + SIDEREAL_DAY_X10000 / 2)
+                      / SIDEREAL_DAY_X10000);
+}
+
+
+
+
+
+
+constexpr bool axis_microsteps_match(axis_t a)
+{
+    return AXES[a].mres <= 8 && AXES[a].microsteps == (256u >> AXES[a].mres);
+}
+
+constexpr bool axis_currents_ok(axis_t a)
+{
+    return AXES[a].irun >= 16
+        && AXES[a].ihold > 0
+        && AXES[a].ihold <= AXES[a].irun
+        && AXES[a].irun_hot >= 16
+        && AXES[a].irun_hot < AXES[a].irun
+        && AXES[a].ihold <= AXES[a].irun_hot;
+}
+
+static_assert(axis_microsteps_match(AXIS_RA), "RA: microsteps не совпадает с MRES (256 >> MRES)");
+static_assert(axis_microsteps_match(AXIS_DEC), "DEC: microsteps не совпадает с MRES (256 >> MRES)");
+static_assert(axis_currents_ok(AXIS_RA), "RA: проверь токи (IRUN, IHOLD, IRUN_HOT)");
+static_assert(axis_currents_ok(AXIS_DEC), "DEC: проверь токи (IRUN, IHOLD, IRUN_HOT)");
+static_assert(AXES[AXIS_RA].uart_addr != AXES[AXIS_DEC].uart_addr, "у осей одинаковый адрес UART");
+static_assert(AXES[AXIS_RA].uart_addr <= 3 && AXES[AXIS_DEC].uart_addr <= 3, "адрес TMC2209 — 0..3");
+
+
+
+static_assert(axis_steps_per_rev(AXIS_RA) == 4992000, "RA: шагов на оборот изменилось");
+static_assert(axis_sidereal_mhz(AXIS_RA) == 57936, "RA: скорость ведения изменилась");
+# 6 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 2
+# 1 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/stepper/motion.h" 1
+# 22 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/stepper/motion.h"
+enum e_motion_cmd_t {
+    CMD_SET_RATE,
+    CMD_MOVE,
+    CMD_STOP,
+    CMD_TRACK,
+    CMD_GOTO,
+    CMD_ABORT,
+};
+
+
+enum motion_rate_t {
+    MOTION_RATE_GUIDE,
+    MOTION_RATE_CENTER,
+    MOTION_RATE_FIND,
+    MOTION_RATE_SLEW,
+};
+
+
+enum motion_state_t {
+    MOTION_STATE_IDLE,
+    MOTION_STATE_TRACKING,
+    MOTION_STATE_GOTO,
+    MOTION_STATE_FAULT,
+};
+
+
+typedef struct {
+    e_motion_cmd_t cmd;
+    axis_t axis;
+    bool isForward;
+    bool on;
+    motion_rate_t rate;
+    int32_t target[AXIS_COUNT];
+} motion_cmd_t;
+
+
+
+esp_err_t motion_start();
+
+
+esp_err_t motion_send(motion_cmd_t cmd, uint32_t timeout = 0);
+
+
+
+esp_err_t motion_set_rate(motion_rate_t rate);
+esp_err_t motion_move(axis_t a, bool forward);
+esp_err_t motion_stop(axis_t a);
+esp_err_t motion_track(bool on);
+esp_err_t motion_goto(int32_t ra_steps, int32_t dec_steps);
+esp_err_t motion_abort();
+
+
+motion_state_t motion_get_state();
+# 7 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 2
+
+static const char *TAG = "mount";
+
+static const char *const DIR_NAME[] = { "север", "юг", "восток", "запад" };
+
+
+static axis_t dir_axis(mount_dir_t dir) {
+    return (dir == MOUNT_DIR_N || dir == MOUNT_DIR_S) ? AXIS_DEC : AXIS_RA;
+}
+
+
+
+
+static bool dir_forward(mount_dir_t dir) {
+    return dir == MOUNT_DIR_N || dir == MOUNT_DIR_W;
+}
+
+static motion_rate_t to_motion_rate(mount_rate_t rate) {
+    switch (rate) {
+        case MOUNT_RATE_GUIDE: return MOTION_RATE_GUIDE;
+        case MOUNT_RATE_CENTER: return MOTION_RATE_CENTER;
+        case MOUNT_RATE_FIND: return MOTION_RATE_FIND;
+        case MOUNT_RATE_SLEW: return MOTION_RATE_SLEW;
+    }
+    return MOTION_RATE_SLEW;
+}
+
+esp_err_t mount_move(mount_dir_t dir) {
+    do { do { if ((
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   4 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   >= ((ESP_LOG_INFO) & ((1 << (3)) - 1)))) { do { if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_ERROR) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_ERROR); __esp_log_config;})), TAG, "" "E" " (%" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Движение: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_WARN) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_WARN); __esp_log_config;})), TAG, "" "W" " (%" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Движение: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_DEBUG) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_DEBUG); __esp_log_config;})), TAG, "" "D" " (%" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Движение: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_VERBOSE) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_VERBOSE); __esp_log_config;})), TAG, "" "V" " (%" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Движение: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_INFO); __esp_log_config;})), TAG, "" "I" " (%" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 35 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Движение: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } } while(0); } } while(0); } while(0);
+    return motion_move(dir_axis(dir), dir_forward(dir));
+}
+
+esp_err_t mount_stop(mount_dir_t dir) {
+    do { do { if ((
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   4 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   >= ((ESP_LOG_INFO) & ((1 << (3)) - 1)))) { do { if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_ERROR) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_ERROR); __esp_log_config;})), TAG, "" "E" " (%" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_WARN) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_WARN); __esp_log_config;})), TAG, "" "W" " (%" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_DEBUG) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_DEBUG); __esp_log_config;})), TAG, "" "D" " (%" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_VERBOSE) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_VERBOSE); __esp_log_config;})), TAG, "" "V" " (%" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } else { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_INFO); __esp_log_config;})), TAG, "" "I" " (%" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 40 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп: %s" "" "\n", esp_log_timestamp(), TAG , DIR_NAME[dir]); } } while(0); } } while(0); } while(0);
+    return motion_stop(dir_axis(dir));
+}
+
+esp_err_t mount_stop_all() {
+    do { do { if ((
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   4 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   >= ((ESP_LOG_INFO) & ((1 << (3)) - 1)))) { do { if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_ERROR) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_ERROR); __esp_log_config;})), TAG, "" "E" " (%" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп всего" "" "\n", esp_log_timestamp(), TAG ); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_WARN) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_WARN); __esp_log_config;})), TAG, "" "W" " (%" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп всего" "" "\n", esp_log_timestamp(), TAG ); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_DEBUG) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_DEBUG); __esp_log_config;})), TAG, "" "D" " (%" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп всего" "" "\n", esp_log_timestamp(), TAG ); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_VERBOSE) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_VERBOSE); __esp_log_config;})), TAG, "" "V" " (%" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп всего" "" "\n", esp_log_timestamp(), TAG ); } else { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_INFO); __esp_log_config;})), TAG, "" "I" " (%" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 45 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Стоп всего" "" "\n", esp_log_timestamp(), TAG ); } } while(0); } } while(0); } while(0);
+    return motion_abort();
+}
+
+esp_err_t mount_track(bool on) {
+    do { do { if ((
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   4 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   >= ((ESP_LOG_INFO) & ((1 << (3)) - 1)))) { do { if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_ERROR) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_ERROR); __esp_log_config;})), TAG, "" "E" " (%" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Ведение: %s" "" "\n", esp_log_timestamp(), TAG , on ? "включить" : "выключить"); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_WARN) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_WARN); __esp_log_config;})), TAG, "" "W" " (%" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Ведение: %s" "" "\n", esp_log_timestamp(), TAG , on ? "включить" : "выключить"); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_DEBUG) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_DEBUG); __esp_log_config;})), TAG, "" "D" " (%" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Ведение: %s" "" "\n", esp_log_timestamp(), TAG , on ? "включить" : "выключить"); } else if (((ESP_LOG_INFO) & ((1 << (3)) - 1))==ESP_LOG_VERBOSE) { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_VERBOSE); __esp_log_config;})), TAG, "" "V" " (%" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Ведение: %s" "" "\n", esp_log_timestamp(), TAG , on ? "включить" : "выключить"); } else { esp_log((__extension__({ esp_log_config_t __esp_log_config; __esp_log_config.data = (ESP_LOG_INFO); __esp_log_config;})), TAG, "" "I" " (%" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp" 3 4
+   "l" 
+# 50 "/Users/andrew/embedded/pet-projects/eq3-2-handmade/main/mount/mount.cpp"
+   "u" ") %s: " "Ведение: %s" "" "\n", esp_log_timestamp(), TAG , on ? "включить" : "выключить"); } } while(0); } } while(0); } while(0);
+    return motion_track(on);
+}
+
+void mount_set_rate(mount_rate_t rate) {
+    motion_set_rate(to_motion_rate(rate));
+}

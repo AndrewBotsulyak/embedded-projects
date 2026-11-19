@@ -1,0 +1,31 @@
+Command: ninja all
+[1/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/utils/tmc-err-codes.cpp.obj
+[2/22] Building CXX object esp-idf/lx200_format/CMakeFiles/__idf_lx200_format.dir/lx200_format.cpp.obj
+[3/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/lx200/lx200.cpp.obj
+[4/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[5/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/lx200/lx200_uart.cpp.obj
+[6/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/stepper/motion.cpp.obj
+[7/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/mount/mount.cpp.obj
+[8/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/button_control/button_control.cpp.obj
+[9/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/tmc-driver/tmc-uart.cpp.obj
+[10/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/tmc-driver/tmc-error.cpp.obj
+[11/22] Linking C static library esp-idf/lx200_format/liblx200_format.a
+[12/22] Performing build step for 'bootloader'
+[1/1] cd /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/bootloader && /Users/andrew/.espressif/tools/python/v6.0.2/venv/bin/python /Users/andrew/.espressif/v6.0.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[13/22] No install step for 'bootloader'
+[14/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/tmc-driver/tmc-driver.cpp.obj
+[15/22] Completed 'bootloader'
+[16/22] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/stepper/stepper.cpp.obj
+[17/22] Linking C static library esp-idf/main/libmain.a
+[18/22] Generating esp-idf/esp_system/ld/sections.ld
+[19/22] Building C object CMakeFiles/eq3-2-handmade.elf.dir/project_elf_src_esp32s3.c.obj
+[20/22] Linking CXX executable eq3-2-handmade.elf
+[21/22] Generating binary image from built executable
+esptool v5.3.1
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Generated /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/eq3-2-handmade.bin
+[22/22] cd /Users/andrew/embedded/pet-projects/eq3-2-handmade/build && /Users/andrew/.espressif/tools/python/v6.0.2/venv/bin/python /Users/andrew/.espressif/v6.0.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/partition_table/partition-table.bin /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/eq3-2-handmade.bin
+eq3-2-handmade.bin binary size 0x488a0 bytes. Smallest app partition is 0x100000 bytes. 0xb7760 bytes (72%) free.

@@ -1,0 +1,18 @@
+dependencies:
+  gin66/fastaccelstepper:
+    component_hash: ea7c8afa1025449d87ccb606c6a212d06a04b176327a2f04d004f8a23454a5fa
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.4.0
+  idf:
+    source:
+      type: idf
+    version: 6.0.2
+direct_dependencies:
+- gin66/fastaccelstepper
+- idf
+manifest_hash: b2fa644be8af4ca412266d36dd657ca0c8b51bca121a87a359136f415b3dc8e4
+target: esp32s3
+version: 3.0.0

@@ -1,0 +1,5 @@
+"-specs=/Users/andrew/embedded/pet-projects/eq3-2-handmade/build/bootloader/specs/picolibc.specs"
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero

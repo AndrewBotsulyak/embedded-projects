@@ -1,0 +1,25 @@
+Command: ninja all
+[1/16] Performing build step for 'bootloader'
+[1/1] cd /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/bootloader && /Users/andrew/.espressif/tools/python/v6.0.2/venv/bin/python /Users/andrew/.espressif/v6.0.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/bootloader/bootloader.bin
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[2/16] No install step for 'bootloader'
+[3/16] Completed 'bootloader'
+[4/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[5/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/mount/mount.cpp.obj
+[6/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/button_control/button_control.cpp.obj
+[7/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/tmc-driver/tmc-uart.cpp.obj
+[8/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/tmc-driver/tmc-error.cpp.obj
+[9/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/tmc-driver/tmc-driver.cpp.obj
+[10/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/stepper/motion.cpp.obj
+[11/16] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/stepper/stepper.cpp.obj
+[12/16] Linking C static library esp-idf/main/libmain.a
+[13/16] Generating esp-idf/esp_system/ld/sections.ld
+[14/16] Linking CXX executable eq3-2-handmade.elf
+[15/16] Generating binary image from built executable
+esptool v5.3.1
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Generated /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/eq3-2-handmade.bin
+[16/16] cd /Users/andrew/embedded/pet-projects/eq3-2-handmade/build && /Users/andrew/.espressif/tools/python/v6.0.2/venv/bin/python /Users/andrew/.espressif/v6.0.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/partition_table/partition-table.bin /Users/andrew/embedded/pet-projects/eq3-2-handmade/build/eq3-2-handmade.bin
+eq3-2-handmade.bin binary size 0x48ab0 bytes. Smallest app partition is 0x100000 bytes. 0xb7550 bytes (72%) free.

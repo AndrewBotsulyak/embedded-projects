@@ -4,6 +4,8 @@
 #include <stdio.h>
 
 #include "driver/uart.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 
 #include "tmc-regs.h"
 
@@ -18,10 +20,16 @@
 #define TMC_UART_TX_PIN  17
 #define TMC_UART_RX_PIN  18
 
-#define TMC_DRIVER_ADDR  0x00  // адрес драйвера на линии (один драйвер — 0)
+// Адрес драйвера на линии равен номеру оси: его задают пины MS1/MS2,
+// разводка описана у tmc_axis_t в tmc-uart.h.
+// «& 0x03» оставляет только два младших бита: адресов у TMC2209 всего четыре
+// (0..3), и так мы гарантированно не отправим несуществующий.
+#define TMC_AXIS_ADDR(axis)  ((uint8_t)(axis) & 0x03)
 #define TMC_READ_TIMEOUT_MS 20
 
 void tmc_uart_init(void) {
+    // Параметры линии, которых ждёт TMC2209: 115200 бод, 8 бит данных,
+    // без бита чётности, один стоп-бит, без аппаратного управления потоком.
     uart_config_t cfg = {
         .baud_rate = 115200,
         .data_bits = UART_DATA_8_BITS,
@@ -29,9 +37,14 @@ void tmc_uart_init(void) {
         .stop_bits = UART_STOP_BITS_1,
         .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
     };
+    // Применяем эти параметры к порту UART1.
     uart_param_config(TMC_UART_NUM, &cfg);
+    // Назначаем порту ножки: TX на GPIO17, RX на GPIO18.
+    // Линии RTS и CTS не используем — оставляем как есть.
     uart_set_pin(TMC_UART_NUM, TMC_UART_TX_PIN, TMC_UART_RX_PIN,
                  UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+    // Включаем драйвер порта: приёмный буфер 256 байт, буфер передачи не нужен
+    // (0 — отправка ждёт, пока байты уйдут), очередь событий не нужна.
     uart_driver_install(TMC_UART_NUM, 256, 0, 0, NULL, 0);
 }
 
@@ -40,18 +53,30 @@ void tmc_uart_init(void) {
     TMC2209 ожидает CRC, посчитанную по конкретному, зафиксированному в его документации алгоритму
 */
 uint8_t tmc_crc8(uint8_t *data, uint8_t len) {
+    // Начальное значение контрольной суммы — ноль.
     uint8_t crc = 0;
+    // Внешний цикл: перебираем все байты пакета по очереди.
     for (int i = 0; i < len; i++) {
+        // Берём очередной байт в отдельную переменную, чтобы можно было
+        // сдвигать его, не портя исходный пакет.
         uint8_t b = data[i];
+        // Внутренний цикл: перебираем 8 бит этого байта, начиная с младшего.
         for (int j = 0; j < 8; j++) {
+            // Сравниваем старший бит суммы (crc >> 7) с текущим битом байта
+            // (b & 0x01). «^» — исключающее ИЛИ: результат 1, если биты разные.
             if ((crc >> 7) ^ (b & 0x01)) {
+                // Биты разные: сдвигаем сумму влево и «подмешиваем» полином 0x07.
                 crc = (crc << 1) ^ 0x07;
             } else {
+                // Биты одинаковые: просто сдвигаем сумму влево.
                 crc = (crc << 1);
             }
+            // Сдвигаем байт вправо, чтобы на следующем шаге смотреть
+            // на следующий бит.
             b >>= 1;
         }
     }
+    // После всех байтов в crc лежит готовая контрольная сумма.
     return crc;
 }
 
@@ -59,93 +84,323 @@ uint8_t tmc_crc8(uint8_t *data, uint8_t len) {
     Запись регистра — сборка и отправка пакета.
     reg — номер регистра, бит записи выставляется внутри.
 */
-void tmc_write_register(uint8_t reg, uint32_t value) {
+void tmc_write_register(tmc_axis_t axis, uint8_t reg, uint32_t value) {
+    // Пакет записи — ровно 8 байт, раскладка из даташита.
     uint8_t packet[8];
+    // Байт 0: синхробайт — по нему драйвер понимает, что начался пакет.
     packet[0] = TMC_SYNC_BYTE;
-    packet[1] = TMC_DRIVER_ADDR;
+    // Байт 1: адрес драйвера — какой из драйверов на линии должен ответить.
+    packet[1] = TMC_AXIS_ADDR(axis);
+    // Байт 2: номер регистра. Старший бит (0x80) = 1 означает «запись».
     packet[2] = reg | 0x80;        // номер регистра, бит записи установлен
+    // Байты 3-6: 32-битное значение, разрезанное на 4 байта, старший первым.
+    // «>> 24» сдвигает нужный байт в самый низ, «& 0xFF» отрезает остальное.
     packet[3] = (value >> 24) & 0xFF;
     packet[4] = (value >> 16) & 0xFF;
     packet[5] = (value >> 8)  & 0xFF;
     packet[6] = value & 0xFF;
+    // Байт 7: контрольная сумма первых семи байт. Драйвер пересчитает её сам
+    // и, если не совпадёт, молча проигнорирует пакет.
     packet[7] = tmc_crc8(packet, 7);
 
+    // Отправляем все 8 байт в линию.
     uart_write_bytes(TMC_UART_NUM, (const char *)packet, 8);
+    // Без буфера передачи uart_write_bytes возвращается, как только байты
+    // легли в аппаратный FIFO, а не когда ушли в линию. Если сразу за записью
+    // идёт чтение, его uart_flush_input() отработает раньше, чем придёт эхо
+    // этой записи, эхо попадёт в буфер ответа и сдвинет его — CRC не сойдётся,
+    // и живой драйвер будет выглядеть «без питания». Ждём, пока всё уйдёт.
+    uart_wait_tx_done(TMC_UART_NUM, pdMS_TO_TICKS(TMC_READ_TIMEOUT_MS));
 }
 
-bool tmc_read_register(uint8_t reg, uint32_t *value) {
+bool tmc_read_register(tmc_axis_t axis, uint8_t reg, uint32_t *value) {
+    // Запрос на чтение короче записи — 4 байта: данных в нём нет.
     uint8_t req[4];
+    // Байт 0: синхробайт.
     req[0] = TMC_SYNC_BYTE;
-    req[1] = TMC_DRIVER_ADDR;
+    // Байт 1: адрес драйвера, у которого спрашиваем.
+    req[1] = TMC_AXIS_ADDR(axis);
+    // Байт 2: номер регистра. «& 0x7F» гарантирует, что старший бит = 0.
     req[2] = reg & 0x7F;   // бит записи НЕ установлен — это чтение
+    // Байт 3: контрольная сумма первых трёх байт.
     req[3] = tmc_crc8(req, 3);
 
     // перед отправкой очищаем всё, что могло случайно накопиться в приёмном буфере
     uart_flush_input(TMC_UART_NUM);
 
+    // Отправляем запрос в линию.
     uart_write_bytes(TMC_UART_NUM, (const char *)req, 4);
 
     // Линия одна, поэтому приёмник слышит собственную передачу: сначала придут
     // 4 байта эха запроса и только за ними 8 байт ответа драйвера.
     // Ответная датаграмма: 0x05, 0xFF (адрес мастера), reg, 4 байта данных, CRC.
+    // Буфер под эхо + ответ, заранее заполненный нулями.
     uint8_t buf[TMC_ECHO_LEN + TMC_REPLY_LEN] = {0};
+    // Ждём до 20 мс, пока придут все 12 байт. len — сколько реально пришло.
     int len = uart_read_bytes(TMC_UART_NUM, buf, sizeof(buf),
                               pdMS_TO_TICKS(TMC_READ_TIMEOUT_MS));
+    // Пришло меньше, чем ждали, — драйвер не ответил.
     if (len < (int)sizeof(buf)) {
         return false;  // молчит — скорее всего обесточен
     }
 
+    // r указывает на начало ответа драйвера — сразу за четырьмя байтами эха.
     const uint8_t *r = buf + TMC_ECHO_LEN;  // пропускаем эхо собственного запроса
 
     // Проверяем, что это действительно ответ драйвера, а не мусор на линии.
     // Без CRC невозможно отличить «нет питания» от «наводка на проводе».
+    // Три проверки: первый байт — синхробайт, второй — адрес мастера 0xFF,
+    // последний — совпадающая контрольная сумма. Не прошла любая — ответ битый.
     if (r[0] != TMC_SYNC_BYTE || r[1] != TMC_MASTER_ADDR ||
         r[7] != tmc_crc8((uint8_t *)r, 7)) {
         return false;
     }
 
+    // Если вызывающему нужно само значение (а не только факт ответа),
+    // склеиваем 4 байта данных обратно в одно 32-битное число:
+    // каждый байт сдвигаем на своё место («<< 24» — в старший), «|» объединяет.
     if (value != NULL) {
         *value = ((uint32_t)r[3] << 24) | ((uint32_t)r[4] << 16) |
                  ((uint32_t)r[5] << 8)  | (uint32_t)r[6];
     }
+    // Ответ пришёл и прошёл проверку.
     return true;
 }
 
-void tmc_configure(void) {
+// Сколько мотор должен простоять на рабочем токе, чтобы StealthChop успел
+// провести замер обмотки (процедура AT#1). Даташит требует остановки порядка
+// сотни миллисекунд — берём с запасом.
+#define AUTOTUNE_STANDSTILL_MS 300
+
+// Действующее значение CHOPCONF. Частичной записи регистра не существует,
+// пишутся все 32 бита сразу, поэтому текущее состояние приходится помнить:
+// переключение vsense не должно сносить микрошаг и бит интерполяции.
+// Массив на две ячейки — по одной на ось: [0] для RA, [1] для DEC.
+static uint32_t s_chopconf[TMC_AXIS_MAX] = { CHOPCONF_DEFAULT, CHOPCONF_DEFAULT };
+
+// Действующие токи по шкале CS. Нужны автотюнингу, чтобы временно поднять
+// ток покоя до рабочего и затем вернуть всё как было.
+// Тоже по ячейке на ось.
+static uint8_t  s_irun[TMC_AXIS_MAX];
+static uint8_t  s_ihold[TMC_AXIS_MAX];
+static uint16_t s_vfs_mv[TMC_AXIS_MAX] = { TMC_VFS_MV_LOW_SENS, TMC_VFS_MV_LOW_SENS };
+
+// Токи из конфигурации по номеру оси.
+// Таблица вместо if/else: k_run_ma[axis] сразу даёт ток нужной оси.
+static const uint16_t k_run_ma[TMC_AXIS_MAX]  = { AXIS1_RUN_CURRENT_MA, AXIS2_RUN_CURRENT_MA };
+static const uint8_t  k_hold_pc[TMC_AXIS_MAX] = { AXIS1_HOLD_PERCENT,   AXIS2_HOLD_PERCENT };
+
+// Для лога: какая ось чем занимается.
+static const char *const k_axis_name[TMC_AXIS_MAX] = { "RA", "DEC" };
+
+// Собирает три поля регистра IHOLD_IRUN в одно 32-битное слово и пишет его.
+static void write_ihold_irun(tmc_axis_t axis, uint8_t irun, uint8_t ihold,
+                             uint8_t delay) {
+    // Каждое поле сдвигаем на его место в регистре: IHOLD — в биты 0-4,
+    // IRUN — в биты 8-12, IHOLDDELAY — в биты 16-19. «|» складывает их вместе.
+    tmc_write_register(axis, REG_IHOLD_IRUN,
+                       ((uint32_t)ihold << IHOLD_SHIFT)  |
+                       ((uint32_t)irun  << IRUN_SHIFT)   |
+                       ((uint32_t)delay << IHOLDDELAY_SHIFT));
+}
+
+/*
+    Формула тока из даташита TMC2209 («Selecting sense resistors»):
+
+        I_RMS = (CS + 1)/32 × V_fs/(R_sense + R_внутр) × 1/√2
+
+    Здесь она обращена: по желаемому току получаем CS. Считаем в целых —
+    ток в мА, сопротивление в мОм, V_fs в мВ, √2 как 1414/1000; промежуточное
+    произведение не влезает в 32 бита, поэтому uint64.
+
+    Деление обрезает вниз намеренно: реальный ток окажется не больше
+    заказанного. Округление к ближайшему могло бы дать перегрев обмотки.
+*/
+static uint32_t cs_from_current(uint16_t current_ma, uint16_t vfs_mv) {
+    // Числитель формулы: 32 × ток × √2 × полное сопротивление цепи.
+    uint64_t num = 32ULL * current_ma * 1414ULL *
+                   (TMC_RSENSE_MOHM + TMC_INTERNAL_MOHM);
+    // Знаменатель: опорное напряжение, плюс два множителя 1000 — они
+    // компенсируют то, что √2 взят как 1414 и сопротивление в миллиомах.
+    uint64_t den = (uint64_t)vfs_mv * 1000ULL * 1000ULL;
+    // Целочисленное деление — дробная часть отбрасывается (округление вниз).
+    uint64_t cs_plus_1 = num / den;
+
+    // Формула даёт CS+1, поэтому вычитаем единицу. Если вышел ноль, вычитать
+    // нельзя — беззнаковое число «перевернулось» бы в огромное, поэтому 0.
+    return cs_plus_1 > 0 ? (uint32_t)(cs_plus_1 - 1) : 0;
+}
+
+// Та же формула в прямую сторону — узнать, что реально получилось после
+// квантования по 32 ступеням шкалы.
+static uint16_t current_from_cs(uint8_t cs, uint16_t vfs_mv) {
+    // Числитель: (CS+1) × опорное напряжение, с запасом разрядов на миллиамперы.
+    uint64_t num = 1000000ULL * ((uint64_t)cs + 1) * vfs_mv;
+    // Знаменатель: 32 ступени × сопротивление × √2.
+    uint64_t den = 32ULL * (TMC_RSENSE_MOHM + TMC_INTERNAL_MOHM) * 1414ULL;
+
+    // Результат — ток в миллиамперах.
+    return (uint16_t)(num / den);
+}
+
+bool tmc_set_current_ma(tmc_axis_t axis, uint16_t run_ma, uint8_t hold_percent) {
+    // Первая попытка — с обычной чувствительностью (опорное 325 мВ).
+    uint16_t vfs_mv = TMC_VFS_MV_LOW_SENS;
+    uint32_t cs = cs_from_current(run_ma, vfs_mv);
+
+    // CS ниже 16 — синусная таблица микрошага делится на слишком грубые
+    // ступени. Даташит велит в этом случае не снижать CS дальше, а поднять
+    // чувствительность компаратора: при vsense=1 полная шкала падает с 325
+    // до 180 мВ, и тот же ток выражается почти вдвое большим CS.
+    if (cs < TMC_CS_MIN) {
+        // Вторая попытка — с повышенной чувствительностью (опорное 180 мВ).
+        vfs_mv = TMC_VFS_MV_HIGH_SENS;
+        cs = cs_from_current(run_ma, vfs_mv);
+    }
+
+    // Флаг «всё получилось как заказано». Сбросим его, если придётся уступить.
+    bool ok = true;
+    // Заказан ток больше, чем способно железо: шкала кончилась на 31.
+    if (cs > TMC_CS_MAX) {
+        printf("TMC2209 %s: %u мА недостижимо при R_sense=%u мОм, "
+               "потолок %u мА — ставим максимум\n",
+               k_axis_name[axis], run_ma, TMC_RSENSE_MOHM,
+               current_from_cs(TMC_CS_MAX, vfs_mv));
+        // Ставим максимум, который есть, и отмечаем, что заказ не выполнен.
+        cs = TMC_CS_MAX;
+        ok = false;
+    // Ток слишком мал даже с повышенной чувствительностью.
+    } else if (cs < TMC_CS_MIN) {
+        printf("TMC2209 %s: %u мА даёт CS=%lu < %u даже при vsense=1 — "
+               "микрошаг потеряет точность, нужен R_sense крупнее\n",
+               k_axis_name[axis], run_ma, (unsigned long)cs, TMC_CS_MIN);
+        // Значение оставляем — мотор работать будет, но хуже. Отмечаем это.
+        ok = false;
+    }
+
+    // Отношение токов задаётся как (IHOLD+1)/(IRUN+1) — единица есть в обеих
+    // частях шкалы, поэтому процент считается от cs+1, а не от cs.
+    uint32_t hold_plus_1 = ((cs + 1) * hold_percent) / 100;
+    // Переводим обратно из «CS+1» в CS, не давая уйти ниже нуля.
+    uint8_t  ihold = hold_plus_1 > 0 ? (uint8_t)(hold_plus_1 - 1) : 0;
+
+    // Запоминаем получившиеся значения для этой оси — они понадобятся
+    // автотюнингу и функции tmc_get_run_current_ma().
+    s_irun[axis]   = (uint8_t)cs;
+    s_ihold[axis]  = ihold;
+    s_vfs_mv[axis] = vfs_mv;
+
+    // vsense живёт в CHOPCONF, токи — в IHOLD_IRUN. Меняются вместе.
+    if (vfs_mv == TMC_VFS_MV_HIGH_SENS) {
+        // «|=» включает бит vsense, не трогая остальные биты регистра.
+        s_chopconf[axis] |= CHOPCONF_VSENSE;
+    } else {
+        // «&= ~» выключает бит vsense, не трогая остальные биты регистра.
+        s_chopconf[axis] &= ~CHOPCONF_VSENSE;
+    }
+    // Отправляем в драйвер обновлённый CHOPCONF целиком...
+    tmc_write_register(axis, REG_CHOPCONF, s_chopconf[axis]);
+    // ...и токи с плавным спадом при остановке.
+    write_ihold_irun(axis, s_irun[axis], s_ihold[axis], TMC_IHOLDDELAY);
+
+    // Печатаем в лог, что получилось на самом деле: из-за 32 ступеней шкалы
+    // реальный ток обычно чуть меньше заказанного.
+    printf("TMC2209 %s: ток %u мА (заказано %u), покой %u мА, "
+           "IRUN=%u IHOLD=%u vsense=%d\n",
+           k_axis_name[axis],
+           current_from_cs(s_irun[axis], vfs_mv), run_ma,
+           current_from_cs(s_ihold[axis], vfs_mv),
+           s_irun[axis], s_ihold[axis], vfs_mv == TMC_VFS_MV_HIGH_SENS ? 1 : 0);
+
+    return ok;
+}
+
+uint16_t tmc_get_run_current_ma(tmc_axis_t axis) {
+    // Пересчитываем запомненный CS оси обратно в миллиамперы.
+    return current_from_cs(s_irun[axis], s_vfs_mv[axis]);
+}
+
+void tmc_stealthchop_autotune(tmc_axis_t axis) {
+    // StealthChop — это ШИМ по напряжению, а не отсечка тока по компаратору.
+    // Чтобы понять, какую амплитуду ШИМ подавать, он при первой остановке
+    // после включения замеряет сопротивление обмотки (процедура AT#1).
+    // Даташит требует, чтобы в этот момент действующий ток был равен IRUN:
+    // при заниженном IHOLD замер уходит не на том токе, и дальше StealthChop
+    // работает с неверной амплитудой — вялый момент и пропуск шагов на разгоне.
+    //
+    // Поэтому на время замера приравниваем ток покоя к рабочему. IHOLDDELAY
+    // тут нулевой: между двумя равными значениями сглаживать нечего.
+
+    // Шаг 1: ток покоя = рабочий (в оба поля пишем s_irun).
+    write_ihold_irun(axis, s_irun[axis], s_irun[axis], 0);
+    // Шаг 2: ждём, пока драйвер сделает замер. Мотор в это время стоит.
+    vTaskDelay(pdMS_TO_TICKS(AUTOTUNE_STANDSTILL_MS));
+    // Шаг 3: возвращаем настоящий ток покоя и плавный спад.
+    write_ihold_irun(axis, s_irun[axis], s_ihold[axis], TMC_IHOLDDELAY);
+}
+
+void tmc_configure(tmc_axis_t axis) {
     // GCONF — обязательно ПЕРВЫМ, иначе всё остальное не имеет смысла:
     //   pdn_disable      — снять с PDN_UART функцию снижения тока в покое,
     //                      даташит требует этого при работе по UART;
     //   mstep_reg_select — брать микрошаг из MRES в CHOPCONF. По умолчанию 0,
     //                      и тогда MRES игнорируется, а разрешение задают пины
-    //                      MS1/MS2 (у TMC2209 сочетание 00 означает 1/8).
-    tmc_write_register(REG_GCONF,
-                       GCONF_DEFAULT | GCONF_PDN_DISABLE | GCONF_MSTEP_REG_SELECT);
+    //                      MS1/MS2 (у TMC2209 сочетание 00 означает 1/8);
+    //   I_scale_analog   — СНИМАЕМ. Заводское значение 1 отдаёт шкалу тока
+    //                      подстроечнику VREF на модуле: реальный ток тогда
+    //                      равен расчётному, умноженному на V_VREF/2.5В, то
+    //                      есть зависит от того, куда кто когда крутанул
+    //                      отвёрткой, и в коде этого множителя не видно.
+    //                      С нулём шкалу задаёт внутренний опорник, и ток
+    //                      целиком определяется регистрами.
+    // Как собирается значение: берём заводское, «& ~» выключает
+    // I_scale_analog, «|» включает два нужных бита.
+    tmc_write_register(axis, REG_GCONF,
+                       (GCONF_DEFAULT & ~GCONF_I_SCALE_ANALOG) |
+                       GCONF_PDN_DISABLE | GCONF_MSTEP_REG_SELECT);
 
-    // Частичной записи регистра не существует, пишутся все 32 бита сразу.
-    // Поэтому стартуем от заводского значения и меняем только поле MRES,
-    // иначе запись обнулит настройки чоппера и бит интерполяции.
-    uint32_t chopconf = CHOPCONF_DEFAULT;
-    chopconf &= ~CHOPCONF_MRES_MASK;
-    chopconf |= (MRES_16 << CHOPCONF_MRES_SHIFT);   // микрошаг 1/16
-    tmc_write_register(REG_CHOPCONF, chopconf);
+    // Стартуем от заводского CHOPCONF и меняем только поле MRES, иначе запись
+    // обнулит настройки чоппера и бит интерполяции. В регистр не пишем:
+    // это сделает tmc_set_current_ma(), которому туда же класть бит vsense.
+    // Три строки: взять заводское → стереть поле MRES (биты 24-27) →
+    // положить туда значение 4, то есть микрошаг 1/16.
+    s_chopconf[axis] = CHOPCONF_DEFAULT;
+    s_chopconf[axis] &= ~CHOPCONF_MRES_MASK;
+    s_chopconf[axis] |= (MRES_16 << CHOPCONF_MRES_SHIFT);   // микрошаг 1/16
 
-    // IHOLD_IRUN: биты 0-4 = IHOLD, биты 8-12 = IRUN (шкала 0-31, не мА напрямую)
-    uint32_t ihold_irun = (16UL << 8) | 8UL; // IRUN=16, IHOLD=8 — стартовые значения
-    tmc_write_register(REG_IHOLD_IRUN, ihold_irun);
+    // TPOWERDOWN — пауза от остановки до снижения тока до IHOLD. Единица
+    // ≈ 22 мс, заводские 20 дают ~0.44 с. Это короче пауз между движениями,
+    // поэтому ток успевал бы упасть и снова подняться на каждой остановке —
+    // лишние рывки на валу. TMC_TPOWERDOWN=128 ≈ 2.8 с закрывает паузы.
+    tmc_write_register(axis, REG_TPOWERDOWN, TMC_TPOWERDOWN);
+
+    // Токи у осей разные: DEC при ведении стоит и держит трубу на токе
+    // покоя, поэтому процент покоя у неё выше.
+    tmc_set_current_ma(axis, k_run_ma[axis], k_hold_pc[axis]);
+
+    // Токи уже выставлены — можно калибровать StealthChop. Мотор в этот момент
+    // стоит: движение начнётся только после возврата из этой функции.
+    tmc_stealthchop_autotune(axis);
 }
 
-void tmc_check_communication(void) {
+void tmc_check_communication(tmc_axis_t axis) {
+    // Сюда прочитаем два регистра: счётчик записей и состояние входов.
     uint32_t ifcnt = 0;
     uint32_t ioin  = 0;
 
-    if (!tmc_read_register(REG_IFCNT, &ifcnt)) {
-        printf("TMC2209: нет ответа (силовое питание?)\n");
+    // Читаем IFCNT — счётчик принятых записей. Не ответил — дальше смысла нет.
+    if (!tmc_read_register(axis, REG_IFCNT, &ifcnt)) {
+        printf("TMC2209 %s: нет ответа (силовое питание? адрес MS1/MS2?)\n",
+               k_axis_name[axis]);
         return;
     }
-    tmc_read_register(REG_IOIN, &ioin);
+    // Читаем IOIN — в его старшем байте лежит версия чипа.
+    tmc_read_register(axis, REG_IOIN, &ioin);
 
-    printf("TMC2209: IFCNT=%lu, версия чипа 0x%02lX (ожидается 0x%02X)\n",
-           (unsigned long)ifcnt,
+    // «>> 24» сдвигает старший байт IOIN вниз, «& 0xFF» оставляет только его:
+    // так получаем номер версии. У настоящего TMC2209 это 0x21.
+    printf("TMC2209 %s: IFCNT=%lu, версия чипа 0x%02lX (ожидается 0x%02X)\n",
+           k_axis_name[axis], (unsigned long)ifcnt,
            (unsigned long)((ioin >> IOIN_VERSION_SHIFT) & 0xFF),
            TMC2209_VERSION);
 }

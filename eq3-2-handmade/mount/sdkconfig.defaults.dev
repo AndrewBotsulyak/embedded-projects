@@ -1,0 +1,13 @@
+# Сборка для разработки: idf.py build (пресет dev выбирается по умолчанию)
+
+# Оптимизация -Og: удобно отлаживать, переменные не «выкидываются» компилятором
+CONFIG_COMPILER_OPTIMIZATION_DEBUG=y
+
+# assert() работают и печатают файл/строку
+CONFIG_COMPILER_OPTIMIZATION_ASSERTIONS_ENABLE=y
+
+# Логи: по умолчанию INFO, но в коде можно включить DEBUG для отдельного модуля
+# через esp_log_level_set("TAG", ESP_LOG_DEBUG)
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_MAXIMUM_LEVEL_DEBUG=y
+CONFIG_BOOTLOADER_LOG_LEVEL_INFO=y
