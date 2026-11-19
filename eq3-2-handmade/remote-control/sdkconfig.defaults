@@ -1,0 +1,13 @@
+# Общие настройки пульта для обеих сборок: dev и prod (попадают в git, в отличие от sdkconfig).
+# ESP-IDF берёт их, когда создаёт sdkconfig заново: после fullclean, на другом компьютере и т.п.
+# Поверх них накладывается sdkconfig.defaults.dev или sdkconfig.defaults.prod (см. CMakePresets.json).
+
+# Плата ESP32-C3 Super Mini
+CONFIG_IDF_TARGET="esp32c3"
+
+# Консоль (логи + ввод в idf.py monitor) только через Type-C (встроенный USB-Serial-JTAG, GPIO18/19).
+# UART0 под консоль не используется, поэтому GPIO20/21 свободны как обычные GPIO (под кнопки).
+# Прошивка и так всегда идёт через Type-C, от этой настройки она не зависит.
+# Замечание: встроенный загрузчик чипа (ROM) при включении всё равно выводит пару строк на GPIO21.
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y

@@ -1,0 +1,15 @@
+# Сборка для продакшена: idf.py --preset prod build
+
+# Оптимизация -Os: прошивка меньше и быстрее
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
+
+# assert() остаются (ловят ошибки), но без текста файла/строки — экономия места
+CONFIG_COMPILER_OPTIMIZATION_ASSERTIONS_SILENT=y
+
+# Логи только предупреждения и ошибки; INFO/DEBUG вырезаются из прошивки
+CONFIG_LOG_DEFAULT_LEVEL_WARN=y
+CONFIG_LOG_MAXIMUM_EQUALS_DEFAULT=y
+CONFIG_BOOTLOADER_LOG_LEVEL_WARN=y
+
+# При падении: напечатать причину и перезагрузиться (пульт не должен зависать)
+CONFIG_ESP_SYSTEM_PANIC_PRINT_REBOOT=y

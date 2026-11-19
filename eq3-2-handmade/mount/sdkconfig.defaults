@@ -1,0 +1,17 @@
+# Общие настройки монтировки для обеих сборок: dev и prod (попадают в git, в отличие от sdkconfig).
+# ESP-IDF берёт их, когда создаёт sdkconfig заново: после fullclean, на другом компьютере и т.п.
+# Поверх них накладывается sdkconfig.defaults.dev или sdkconfig.defaults.prod (см. CMakePresets.json).
+
+# Плата ESP32-S3 (модуль ESP32-S3-WROOM-1-N16R8)
+CONFIG_IDF_TARGET="esp32s3"
+
+# Флеш-память на 40 МГц: на 80 МГц эта плата не загружается
+# (ошибки чтения таблицы разделов, см. info/esp32-pins.md, «История с GPIO47/48»)
+CONFIG_ESPTOOLPY_FLASHFREQ_40M=y
+
+# Реальный размер флеш-памяти модуля ESP32-S3-WROOM-1-N16R8
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+
+# Логи только в разъём COM (UART0). Разъём USB (встроенный USB-Serial-JTAG) занят
+# командами LX200 — копия логов туда смешалась бы с ответами (info/lx200.md)
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
